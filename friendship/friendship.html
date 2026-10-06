@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Little Place For Us ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --blue:#748fc4;
+    --blue-dark:#536fa8;
+
+    --lavender:#eef1fb;
+    --lavender-dark:#dfe5f6;
+
+    --cream:#fafbff;
+
+    --text:#30384d;
+    --muted:#7d8497;
+
+    --white:#ffffff;
+
+    --shadow:
+        0 15px 40px rgba(70,85,130,.12);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"DM Sans",sans-serif;
+
+    color:var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(116,143,196,.15),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(183,191,230,.18),
+            transparent 30%
+        ),
+
+        var(--cream);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    width:100%;
+
+    padding:25px 6%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    position:sticky;
+
+    top:0;
+
+    background:rgba(250,251,255,.82);
+
+    backdrop-filter:blur(15px);
+
+    z-index:100;
+
+}
+
+
+/* LOGO */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:700;
+
+    font-size:18px;
+
+}
+
+.logo-icon{
+
+    width:38px;
+    height:38px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--blue);
+
+    color:white;
+
+}
+
+
+/* NAV */
+
+nav{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    position:relative;
+
+    transition:.25s;
+
+}
+
+nav a:hover,
+nav a.active{
+
+    color:var(--text);
+
+}
+
+nav a.active::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:-8px;
+
+    height:2px;
+
+    background:var(--blue);
+
+}
+
+
+/* HEADER BUTTONS */
+
+.header-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.icon-btn{
+
+    width:38px;
+    height:38px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.25s;
+
+}
+
+.icon-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main{
+
+    width:min(1200px,92%);
+
+    margin:auto;
+
+    padding:30px 0 80px;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:360px;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:55px;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            #8ca4d6,
+            #667fba
+        );
+
+    color:white;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* decorative circle */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    right:-180px;
+
+    top:-180px;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    left:-150px;
+
+    bottom:-170px;
+
+}
+
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:580px;
+
+}
+
+
+.hero-small{
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:12px;
+
+    opacity:.8;
+
+    margin-bottom:18px;
+
+}
+
+
+.hero h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(45px,7vw,78px);
+
+    line-height:1;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero h1 span{
+
+    font-family:"Patrick Hand",cursive;
+
+    font-weight:400;
+
+}
+
+
+.hero p{
+
+    line-height:1.7;
+
+    max-width:500px;
+
+    opacity:.9;
+
+    margin-bottom:25px;
+
+}
+
+
+.hero-btn{
+
+    border:none;
+
+    padding:13px 24px;
+
+    border-radius:999px;
+
+    background:white;
+
+    color:var(--blue-dark);
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.hero-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+
+/* HERO FRIEND AVATAR */
+
+.hero-avatar{
+
+    position:absolute;
+
+    right:9%;
+
+    bottom:0;
+
+    width:280px;
+
+    height:280px;
+
+    border-radius:50% 50% 0 0;
+
+    background:rgba(255,255,255,.18);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:150px;
+
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+========================================================= */
+
+.dashboard{
+
+    margin-top:30px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1.1fr 1fr;
+
+    gap:22px;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* CARD TITLE */
+
+.card-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.card-title h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:24px;
+
+}
+
+.card-title span{
+
+    font-size:13px;
+
+    color:var(--blue);
+
+}
+
+
+/* =========================================================
+   MEMORY SEARCH
+========================================================= */
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:var(--lavender);
+
+    padding:12px 15px;
+
+    border-radius:14px;
+
+    margin-bottom:15px;
+
+}
+
+.search-box input{
+
+    border:none;
+
+    outline:none;
+
+    background:none;
+
+    width:100%;
+
+    font-family:inherit;
+
+    color:var(--text);
+
+}
+
+
+.search-result{
+
+    padding:14px;
+
+    background:#f8f9fd;
+
+    border-radius:15px;
+
+    margin-top:10px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.search-result:hover{
+
+    background:var(--lavender-dark);
+
+    transform:translateX(4px);
+
+}
+
+.search-result strong{
+
+    display:block;
+
+    font-size:14px;
+
+    margin-bottom:4px;
+
+}
+
+.search-result small{
+
+    color:var(--muted);
+
+}
+
+
+/* =========================================================
+   CENTER MEMORY
+========================================================= */
+
+.memory-main{
+
+    min-height:310px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #f3f5fc,
+            #ffffff
+        );
+
+}
+
+
+.memory-icon{
+
+    width:130px;
+    height:130px;
+
+    border-radius:35px;
+
+    background:var(--lavender);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+    transform:rotate(-4deg);
+
+}
+
+
+.memory-main h2{
+
+    font-family:"Playfair Display",serif;
+
+    margin-bottom:10px;
+
+}
+
+
+.memory-main p{
+
+    color:var(--muted);
+
+    max-width:350px;
+
+    line-height:1.6;
+
+}
+
+
+.memory-button{
+
+    margin-top:20px;
+
+    border:none;
+
+    background:var(--blue);
+
+    color:white;
+
+    padding:11px 20px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   FRIEND FACTS
+========================================================= */
+
+.friend-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+.friend-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:13px;
+
+    background:#f8f9fd;
+
+    border-radius:16px;
+
+}
+
+
+.friend-icon{
+
+    width:45px;
+    height:45px;
+
+    border-radius:14px;
+
+    background:var(--lavender-dark);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+
+}
+
+
+.friend-item strong{
+
+    display:block;
+
+    font-size:14px;
+
+}
+
+
+.friend-item small{
+
+    color:var(--muted);
+
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.section{
+
+    margin-top:30px;
+
+}
+
+
+.section-title{
+
+    margin-bottom:18px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:30px;
+
+}
+
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+
+.gallery-item{
+
+    aspect-ratio:1;
+
+    border-radius:20px;
+
+    background:var(--lavender);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:50px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+
+
+.gallery-item:hover{
+
+    transform:translateY(-5px) rotate(1deg);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.gallery-item img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message-section{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:22px;
+
+}
+
+
+.message-card{
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f0f3fc,
+            #ffffff
+        );
+
+}
+
+
+.message-card h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+
+.message-card p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+
+.quote{
+
+    font-family:"Patrick Hand",cursive;
+
+    font-size:27px;
+
+    color:var(--blue-dark);
+
+}
+
+
+/* =========================================================
+   SECRET
+========================================================= */
+
+.secret-card{
+
+    background:var(--blue);
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px;
+
+    border-radius:25px;
+
+}
+
+
+.secret-card h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:30px;
+
+    margin-bottom:12px;
+
+}
+
+
+.secret-btn{
+
+    margin-top:20px;
+
+    border:none;
+
+    background:white;
+
+    color:var(--blue-dark);
+
+    padding:12px 25px;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+.secret-message{
+
+    display:none;
+
+    margin-top:20px;
+
+    font-family:"Patrick Hand",cursive;
+
+    font-size:25px;
+
+}
+
+
+.secret-message.show{
+
+    display:block;
+
+    animation:fade .5s ease;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+}
+
+
+footer span{
+
+    color:var(--blue);
+
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+
+        padding:40px 30px;
+
+        min-height:450px;
+
+    }
+
+    .hero-avatar{
+
+        width:180px;
+        height:180px;
+
+        font-size:100px;
+
+        right:5%;
+        bottom:-20px;
+
+        opacity:.7;
+
+    }
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .message-section{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    header{
+
+        padding:18px 5%;
+
+    }
+
+    main{
+
+        width:94%;
+
+    }
+
+    .hero{
+
+        min-height:500px;
+
+        padding:35px 25px;
+
+        align-items:flex-start;
+
+    }
+
+    .hero h1{
+
+        font-size:48px;
+
+    }
+
+    .hero-avatar{
+
+        width:180px;
+        height:180px;
+
+        right:50%;
+
+        transform:translateX(50%);
+
+        font-size:95px;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .gallery{
+
+        gap:10px;
+
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ♡
+        </div>
+
+        <span>our little space</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home" class="active">
+            Home
+        </a>
+
+        <a href="#memories">
+            Memories
+        </a>
+
+        <a href="#message">
+            Message
+        </a>
+
+    </nav>
+
+
+    <div class="header-buttons">
+
+        <button
+            class="icon-btn"
+            onclick="randomMemory()"
+        >
+            ✦
+        </button>
+
+        <button
+            class="icon-btn"
+            onclick="showSecret()"
+        >
+            ♡
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main id="home">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            friendship archive
+        </div>
+
+
+        <h1>
+
+            A little place
+
+            <br>
+
+            <span>for us.</span>
+
+        </h1>
+
+
+        <p>
+
+            Because some friendships deserve
+            their own little corner of the internet.
+
+            The random conversations,
+            stupid jokes, unforgettable moments,
+            and everything in between.
+
+        </p>
+
+
+        <button
+            class="hero-btn"
+            onclick="randomMemory()"
+        >
+
+            Open a memory ✦
+
+        </button>
+
+    </div>
+
+
+    <div class="hero-avatar">
+
+        🧑‍🤝‍🧑
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<section
+    class="dashboard"
+    id="memories"
+>
+
+
+<!-- =========================================================
+     SEARCH CARD
+========================================================= -->
+
+<div class="card">
+
+    <div class="card-title">
+
+        <h2>
+            Memory Search
+        </h2>
+
+        <span>
+            archive
+        </span>
+
+    </div>
+
+
+    <div class="search-box">
+
+        🔎
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search a memory..."
+            oninput="searchMemory()"
+        >
+
+    </div>
+
+
+    <div id="searchResults">
+
+        <div
+            class="search-result"
+            onclick="selectMemory(0)"
+        >
+
+            <strong>
+                That One Day
+            </strong>
+
+            <small>
+                the day everything became chaotic
+            </small>
+
+        </div>
+
+
+        <div
+            class="search-result"
+            onclick="selectMemory(1)"
+        >
+
+            <strong>
+                Random Conversation
+            </strong>
+
+            <small>
+                somehow we talked for 4 hours
+            </small>
+
+        </div>
+
+
+        <div
+            class="search-result"
+            onclick="selectMemory(2)"
+        >
+
+            <strong>
+                The Inside Joke
+            </strong>
+
+            <small>
+                nobody else understands this
+            </small>
+
+        </div>
+
+
+        <div
+            class="search-result"
+            onclick="selectMemory(3)"
+        >
+
+            <strong>
+                One More Adventure
+            </strong>
+
+            <small>
+                hopefully there are more
+            </small>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     MEMORY MAIN
+========================================================= -->
+
+<div
+    class="card memory-main"
+    id="memoryCard"
+>
+
+    <div
+        class="memory-icon"
+        id="memoryIcon"
+    >
+        📸
+    </div>
+
+
+    <h2 id="memoryTitle">
+        That One Day
+    </h2>
+
+
+    <p id="memoryText">
+
+        Some moments are completely
+        ordinary until you realize
+        how much you remember them.
+
+    </p>
+
+
+    <button
+        class="memory-button"
+        onclick="randomMemory()"
+    >
+
+        Random Memory 🎲
+
+    </button>
+
+</div>
+
+
+
+<!-- =========================================================
+     FRIEND FACTS
+========================================================= -->
+
+<div class="card">
+
+    <div class="card-title">
+
+        <h2>
+            Friendship.exe
+        </h2>
+
+        <span>
+            status
+        </span>
+
+    </div>
+
+
+    <div class="friend-list">
+
+
+        <div class="friend-item">
+
+            <div class="friend-icon">
+                🎮
+            </div>
+
+            <div>
+
+                <strong>
+                    Main Activity
+                </strong>
+
+                <small>
+                    playing games together
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="friend-item">
+
+            <div class="friend-icon">
+                💬
+            </div>
+
+            <div>
+
+                <strong>
+                    Communication
+                </strong>
+
+                <small>
+                    70% nonsense, 30% serious
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="friend-item">
+
+            <div class="friend-icon">
+                🤡
+            </div>
+
+            <div>
+
+                <strong>
+                    Humor
+                </strong>
+
+                <small>
+                    questionable at best
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="friend-item">
+
+            <div class="friend-icon">
+                ⭐
+            </div>
+
+            <div>
+
+                <strong>
+                    Friendship Level
+                </strong>
+
+                <small>
+                    somehow still going strong
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     GALLERY
+========================================================= -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Little Moments
+    </h2>
+
+
+    <div class="gallery">
+
+
+        <div class="gallery-item">
+            📸
+        </div>
+
+
+        <div class="gallery-item">
+            🎮
+        </div>
+
+
+        <div class="gallery-item">
+            🍜
+        </div>
+
+
+        <div class="gallery-item">
+            🌅
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MESSAGE
+========================================================= -->
+
+<section
+    class="section"
+    id="message"
+>
+
+
+    <div class="message-section">
+
+
+        <div class="message-card">
+
+            <h2>
+                A Message
+            </h2>
+
+
+            <p>
+
+                I don't think friendships
+                need some huge explanation.
+
+                Sometimes it's just having
+                someone you can send something
+                completely random to.
+
+                Someone who knows the stupid
+                version of you and still stays.
+
+            </p>
+
+            <br>
+
+            <div class="quote">
+
+                "Thanks for being one of
+                my favorite people to annoy."
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="secret-card"
+            id="secretCard"
+        >
+
+            <h2>
+                There's something here...
+            </h2>
+
+
+            <p>
+                But you'll have to click
+                the button to find out.
+            </p>
+
+
+            <button
+                class="secret-btn"
+                onclick="showSecret()"
+            >
+
+                Open Secret ♡
+
+            </button>
+
+
+            <div
+                class="secret-message"
+                id="secretMessage"
+            >
+
+                You're stuck with me now. 😭
+
+                <br>
+
+                No refunds.
+
+                <br><br>
+
+                ♡
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    Made with a little bit of code
+    and a lot of memories.
+
+    <br><br>
+
+    <span>
+        friendship.exe is still running ♡
+    </span>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   MEMORY DATA
+========================================================= */
+
+const memories = [
+
+    {
+        icon:"📸",
+
+        title:"That One Day",
+
+        text:
+        "Some moments are completely ordinary until you realize how much you remember them."
+    },
+
+
+    {
+        icon:"💬",
+
+        title:"Random Conversation",
+
+        text:
+        "We somehow started talking about one thing and ended up discussing absolutely everything."
+    },
+
+
+    {
+        icon:"🤡",
+
+        title:"The Inside Joke",
+
+        text:
+        "Nobody else understands why this is funny. And honestly, that's probably what makes it funny."
+    },
+
+
+    {
+        icon:"🌅",
+
+        title:"One More Adventure",
+
+        text:
+        "Hopefully this isn't the end of our story. There are still plenty of places to go and things to laugh about."
+    }
+
+];
+
+
+let currentMemory = 0;
+
+
+
+/* =========================================================
+   SELECT MEMORY
+========================================================= */
+
+function selectMemory(index){
+
+    currentMemory = index;
+
+    updateMemory();
+
+    document
+        .getElementById("memoryCard")
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+}
+
+
+
+/* =========================================================
+   UPDATE MEMORY
+========================================================= */
+
+function updateMemory(){
+
+    const memory =
+        memories[currentMemory];
+
+
+    document
+        .getElementById("memoryIcon")
+        .textContent =
+        memory.icon;
+
+
+    document
+        .getElementById("memoryTitle")
+        .textContent =
+        memory.title;
+
+
+    document
+        .getElementById("memoryText")
+        .textContent =
+        memory.text;
+
+
+    const card =
+        document.getElementById("memoryCard");
+
+
+    card.animate(
+
+        [
+            {
+                opacity:.5,
+                transform:"translateY(10px)"
+            },
+
+            {
+                opacity:1,
+                transform:"translateY(0)"
+            }
+        ],
+
+        {
+            duration:350,
+            easing:"ease"
+        }
+
+    );
+
+}
+
+
+
+/* =========================================================
+   RANDOM MEMORY
+========================================================= */
+
+function randomMemory(){
+
+    let newMemory;
+
+    do{
+
+        newMemory =
+            Math.floor(
+                Math.random() *
+                memories.length
+            );
+
+    }
+
+    while(
+        newMemory === currentMemory
+    );
+
+
+    currentMemory =
+        newMemory;
+
+
+    updateMemory();
+
+}
+
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchMemory(){
+
+    const query =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+
+    const results =
+        document.querySelectorAll(
+            ".search-result"
+        );
+
+
+    results.forEach(
+        (result,index)=>{
+
+            const text =
+                result.textContent
+                .toLowerCase();
+
+
+            if(
+                text.includes(query)
+            ){
+
+                result.style.display =
+                    "block";
+
+            }else{
+
+                result.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* =========================================================
+   SECRET MESSAGE
+========================================================= */
+
+function showSecret(){
+
+    const message =
+        document.getElementById(
+            "secretMessage"
+        );
+
+
+    message.classList.add(
+        "show"
+    );
+
+
+    const card =
+        document.getElementById(
+            "secretCard"
+        );
+
+
+    card.animate(
+
+        [
+            {
+                transform:"scale(.98)"
+            },
+
+            {
+                transform:"scale(1)"
+            }
+
+        ],
+
+        {
+            duration:300
+        }
+
+    );
+
+}
+
+
+
+/* =========================================================
+   NAV ACTIVE STATE
+========================================================= */
+
+const navLinks =
+    document.querySelectorAll(
+        "nav a"
+    );
+
+
+navLinks.forEach(
+    link=>{
+
+        link.addEventListener(
+            "click",
+            function(){
+
+                navLinks.forEach(
+                    item =>
+                    item.classList.remove(
+                        "active"
+                    )
+                );
+
+
+                this.classList.add(
+                    "active"
+                );
+
+            }
+        );
+
+    }
+);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Little Something — Website Personal</title>
+
+  <meta
+    name="description"
+    content="Website personal untuk birthday, confession, graduation, mabar, Mother's Day, Father's Day, friendship, dan custom website."
+  >
+
+  <style>
+    :root{
+      --pink:#ff6fae;
+      --pink-dark:#e94f91;
+      --pink-soft:#ffe5f0;
+
+      --blue:#9bd8e8;
+      --cream:#fffaf5;
+
+      --ink:#45404a;
+      --muted:#8b8290;
+
+      --white:#ffffff;
+      --line:#f1dce6;
+
+      --shadow:0 18px 45px rgba(110,70,95,.12);
+      --radius:24px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      color:var(--ink);
+
+      background:
+        radial-gradient(
+          circle at 8% 12%,
+          rgba(255,111,174,.13) 0 70px,
+          transparent 71px
+        ),
+        radial-gradient(
+          circle at 92% 20%,
+          rgba(155,216,232,.18) 0 90px,
+          transparent 91px
+        ),
+        var(--cream);
+
+      font-family:Arial, Helvetica, sans-serif;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    button{
+      font:inherit;
+    }
+
+    .wrap{
+      width:min(1120px,92%);
+      margin:auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+
+      backdrop-filter:blur(16px);
+
+      background:rgba(255,250,245,.88);
+      border-bottom:1px solid rgba(241,220,230,.75);
+    }
+
+    .nav-inner{
+      min-height:74px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      gap:24px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+
+      font-weight:900;
+      letter-spacing:-.4px;
+    }
+
+    .brand-mark{
+      width:42px;
+      height:42px;
+
+      border-radius:14px;
+
+      display:grid;
+      place-items:center;
+
+      background:var(--pink);
+      color:white;
+
+      box-shadow:5px 5px 0 #ffd0e3;
+
+      font-size:20px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:22px;
+
+      color:var(--muted);
+
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .nav-links a:hover{
+      color:var(--pink-dark);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+      padding:86px 0 70px;
+
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+
+      align-items:center;
+
+      gap:55px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+
+      padding:9px 14px;
+
+      border-radius:999px;
+
+      background:var(--pink-soft);
+      color:var(--pink-dark);
+
+      font-weight:800;
+      font-size:13px;
+
+      margin-bottom:20px;
+    }
+
+    h1{
+      font-size:clamp(44px,7vw,78px);
+
+      line-height:.95;
+      letter-spacing:-4px;
+
+      margin:0 0 24px;
+    }
+
+    h1 span{
+      color:var(--pink);
+    }
+
+    .hero p{
+      max-width:560px;
+
+      color:var(--muted);
+
+      font-size:18px;
+      line-height:1.7;
+
+      margin:0 0 30px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      min-height:50px;
+
+      padding:0 21px;
+
+      border-radius:15px;
+
+      border:1px solid var(--line);
+
+      font-weight:800;
+
+      cursor:pointer;
+
+      transition:.2s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:var(--pink);
+      color:#fff;
+
+      border-color:var(--pink);
+
+      box-shadow:
+        0 9px 22px rgba(255,111,174,.25);
+    }
+
+    .btn-secondary{
+      background:#fff;
+    }
+
+    /* =========================
+       HERO PREVIEW
+    ========================= */
+
+    .hero-card{
+      position:relative;
+
+      min-height:430px;
+
+      border-radius:34px;
+
+      background:#fff;
+
+      border:1px solid var(--line);
+
+      box-shadow:var(--shadow);
+
+      overflow:hidden;
+
+      padding:25px;
+    }
+
+    .hero-window{
+      height:100%;
+      min-height:380px;
+
+      border-radius:25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #fff2f7,
+          #eafaff
+        );
+
+      padding:22px;
+
+      position:relative;
+    }
+
+    .window-top{
+      display:flex;
+      gap:7px;
+
+      margin-bottom:24px;
+    }
+
+    .dot{
+      width:10px;
+      height:10px;
+
+      border-radius:50%;
+
+      background:#ffb8d3;
+    }
+
+    .dot:nth-child(2){
+      background:#9bd8e8;
+    }
+
+    .dot:nth-child(3){
+      background:#d7c8ff;
+    }
+
+    .mock-title{
+      background:#fff;
+
+      border-radius:20px;
+
+      padding:25px;
+
+      border:1px solid var(--line);
+
+      margin-bottom:15px;
+    }
+
+    .mock-title small{
+      color:var(--pink-dark);
+      font-weight:900;
+    }
+
+    .mock-title h3{
+      font-size:30px;
+      margin:9px 0;
+    }
+
+    .mock-title p{
+      font-size:14px;
+      color:var(--muted);
+
+      margin:0;
+    }
+
+    .mock-grid{
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:14px;
+    }
+
+    .mock-box{
+      background:#fff;
+
+      border:1px solid var(--line);
+
+      border-radius:18px;
+
+      padding:18px;
+
+      min-height:100px;
+    }
+
+    .mock-box strong{
+      display:block;
+
+      font-size:15px;
+
+      margin-bottom:7px;
+    }
+
+    .mock-box span{
+      font-size:12px;
+
+      color:var(--muted);
+    }
+
+    .floating{
+      position:absolute;
+
+      right:22px;
+      bottom:22px;
+
+      background:var(--pink);
+
+      color:#fff;
+
+      padding:12px 16px;
+
+      border-radius:15px;
+
+      font-size:13px;
+      font-weight:900;
+
+      box-shadow:
+        6px 7px 0 rgba(255,208,227,.9);
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section{
+      padding:70px 0;
+    }
+
+    .section-head{
+      display:flex;
+
+      justify-content:space-between;
+      align-items:end;
+
+      gap:25px;
+
+      margin-bottom:28px;
+    }
+
+    .section-head h2{
+      font-size:38px;
+
+      letter-spacing:-1.7px;
+
+      margin:0;
+    }
+
+    .section-head p{
+      max-width:500px;
+
+      color:var(--muted);
+
+      line-height:1.6;
+
+      margin:0;
+    }
+
+    /* =========================
+       CATEGORIES
+    ========================= */
+
+    .categories{
+      display:grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap:16px;
+    }
+
+    .category{
+      background:#fff;
+
+      border:1px solid var(--line);
+
+      border-radius:var(--radius);
+
+      padding:22px;
+
+      min-height:300px;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+
+      box-shadow:
+        0 10px 30px rgba(110,70,95,.06);
+
+      transition:.22s ease;
+    }
+
+    .category:hover{
+      transform:translateY(-6px);
+
+      box-shadow:var(--shadow);
+    }
+
+    .icon{
+      width:58px;
+      height:58px;
+
+      border-radius:18px;
+
+      display:grid;
+      place-items:center;
+
+      background:var(--pink-soft);
+
+      font-size:27px;
+
+      margin-bottom:18px;
+    }
+
+    /* Icon backgrounds */
+    .cat-birthday .icon { background: var(--pink-soft); }
+    .cat-confession .icon { background: #e9f8ff; }
+    .cat-graduation .icon { background: #f0ebff; }
+    .cat-mabar .icon { background: #fff1d9; }
+    .cat-mothers .icon { background: #ffeaf2; }
+    .cat-fathers .icon { background: #eaf4ff; }
+    .cat-friendship .icon { background: #eafff2; }
+    .cat-custom .icon { background: #fff5d9; }
+
+    .category h3{
+      margin:0 0 9px;
+
+      font-size:21px;
+    }
+
+    .category p{
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:14px;
+
+      line-height:1.6;
+    }
+
+    .badge-count{
+      display:inline-block;
+      margin-top:10px;
+      padding:4px 10px;
+      border-radius:12px;
+      background:var(--pink-soft);
+      color:var(--pink-dark);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .price{
+      margin-top:17px;
+
+      font-size:20px;
+
+      font-weight:900;
+    }
+
+    .price small{
+      font-size:12px;
+
+      color:var(--muted);
+
+      font-weight:700;
+    }
+
+    .price-custom{
+      color:var(--pink-dark);
+    }
+
+    .category-footer{
+      display:flex;
+
+      justify-content:space-between;
+      align-items:center;
+
+      margin-top:22px;
+
+      gap:8px;
+    }
+
+    .demo-link{
+      color:var(--pink-dark);
+
+      font-weight:900;
+
+      font-size:13px;
+    }
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .how{
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:16px;
+    }
+
+    .step{
+      background:#fff;
+
+      border:1px solid var(--line);
+
+      border-radius:var(--radius);
+
+      padding:25px;
+    }
+
+    .step-num{
+      width:36px;
+      height:36px;
+
+      border-radius:12px;
+
+      background:var(--pink);
+
+      color:#fff;
+
+      display:grid;
+      place-items:center;
+
+      font-weight:900;
+
+      margin-bottom:17px;
+    }
+
+    .step h3{
+      margin:0 0 9px;
+    }
+
+    .step p{
+      color:var(--muted);
+
+      font-size:14px;
+
+      line-height:1.6;
+
+      margin:0;
+    }
+
+    /* =========================
+       PRICE BANNER
+    ========================= */
+
+    .price-banner{
+      background:var(--ink);
+
+      color:#fff;
+
+      border-radius:32px;
+
+      padding:38px;
+
+      display:flex;
+
+      justify-content:space-between;
+      align-items:center;
+
+      gap:30px;
+
+      box-shadow:var(--shadow);
+    }
+
+    .price-banner h2{
+      margin:0 0 8px;
+
+      font-size:34px;
+    }
+
+    .price-banner p{
+      margin:0;
+
+      color:#d9d2d8;
+
+      line-height:1.6;
+    }
+
+    .big-price{
+      font-size:42px;
+
+      font-weight:900;
+
+      white-space:nowrap;
+    }
+
+    .big-price span{
+      font-size:14px;
+
+      color:#d9d2d8;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer{
+      padding:35px 0 50px;
+
+      color:var(--muted);
+
+      font-size:13px;
+    }
+
+    .footer-inner{
+      display:flex;
+
+      justify-content:space-between;
+
+      gap:20px;
+
+      border-top:1px solid var(--line);
+
+      padding-top:25px;
+    }
+
+    /* =========================
+       MODAL PREVIEW
+    ========================= */
+
+    .modal{
+      position:fixed;
+
+      inset:0;
+
+      z-index:50;
+
+      background:rgba(53,39,48,.55);
+
+      display:none;
+
+      align-items:center;
+      justify-content:center;
+
+      padding:20px;
+    }
+
+    .modal.show{
+      display:flex;
+    }
+
+    .modal-card{
+      width:min(720px,100%);
+
+      max-height:90vh;
+
+      overflow:auto;
+
+      background:#fff;
+
+      border-radius:30px;
+
+      padding:28px;
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.22);
+
+      position:relative;
+    }
+
+    .close{
+      position:absolute;
+
+      right:18px;
+      top:18px;
+
+      width:40px;
+      height:40px;
+
+      border:0;
+
+      border-radius:13px;
+
+      background:#f7edf2;
+
+      color:var(--ink);
+
+      font-size:20px;
+
+      cursor:pointer;
+    }
+
+    .templates-list{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      margin-top:20px;
+    }
+
+    .template-item-card{
+      background: linear-gradient(145deg, #fff1f7, #eafaff);
+      border-radius:20px;
+      padding:20px;
+      border:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .template-item-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .template-item-header h4{
+      margin:0;
+      font-size:18px;
+      color:var(--ink);
+    }
+
+    .template-item-desc{
+      font-size:13px;
+      color:var(--muted);
+      margin:0;
+      line-height:1.5;
+    }
+
+    .template-item-actions{
+      display:flex;
+      gap:10px;
+      margin-top:5px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:1050px){
+
+      .categories{
+        grid-template-columns:
+          repeat(3,1fr);
+      }
+
+    }
+
+    @media(max-width:900px){
+
+      .hero{
+        grid-template-columns:1fr;
+
+        gap:30px;
+      }
+
+      .categories{
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .how{
+        grid-template-columns:1fr;
+      }
+
+      .price-banner{
+        flex-direction:column;
+
+        align-items:flex-start;
+      }
+
+    }
+
+    @media(max-width:620px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero{
+        padding-top:55px;
+      }
+
+      h1{
+        letter-spacing:-2.5px;
+      }
+
+      .categories{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card{
+        min-height:350px;
+      }
+
+      .hero-window{
+        min-height:300px;
+      }
+
+      .section-head{
+        display:block;
+      }
+
+      .section-head p{
+        margin-top:12px;
+      }
+
+      .footer-inner{
+        display:block;
+      }
+
+      .footer-inner p:last-child{
+        margin-top:8px;
+      }
+
+      .mock-title h3{
+        font-size:24px;
+      }
+
+      .mock-grid{
+        gap:8px;
+      }
+
+      .mock-box{
+        padding:13px;
+        min-height:90px;
+      }
+
+      .mock-box strong{
+        font-size:13px;
+      }
+
+      .mock-box span{
+        font-size:10px;
+      }
+
+      .floating{
+        font-size:11px;
+        padding:9px 12px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav class="nav">
+
+    <div class="wrap nav-inner">
+
+      <a class="brand" href="#">
+
+        <span class="brand-mark">
+          ✦
+        </span>
+
+        <span>
+          A Little Something by Star ✦
+        </span>
+
+      </a>
+
+      <div class="nav-links">
+
+        <a href="#kategori">
+          Kategori
+        </a>
+
+        <a href="#cara-kerja">
+          Cara Kerja
+        </a>
+
+        <a href="#harga">
+          Harga
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="wrap hero">
+
+      <div>
+
+        <div class="eyebrow">
+          💌 Website personal yang dibuat khusus
+        </div>
+
+        <h1>
+          Beberapa pesan<br>
+          <span>layak jadi website.</span>
+        </h1>
+
+        <p>
+          Mau kasih kejutan, mengucapkan sesuatu, atau sekadar bikin seseorang
+          tersenyum? Pilih websitenya, kirim detailnya, lalu biarkan kami
+          mengubah pesanmu menjadi sesuatu yang lebih berkesan.
+        </p>
+
+        <div class="actions">
+
+          <a
+            class="btn btn-primary"
+            href="#kategori"
+          >
+            Lihat Pilihan
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="#cara-kerja"
+          >
+            Cara Kerja →
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- HERO PREVIEW -->
+
+      <div
+        class="hero-card"
+        aria-label="Preview website personal"
+      >
+
+        <div class="hero-window">
+
+          <div class="window-top">
+
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+          </div>
+
+
+          <div class="mock-title">
+
+            <small>
+              A LITTLE SOMETHING
+            </small>
+
+            <h3>
+              Made just for you ♡
+            </h3>
+
+            <p>
+              Pesan pribadi, kenangan, dan kejutan
+              dalam satu tempat.
+            </p>
+
+          </div>
+
+
+          <div class="mock-grid">
+
+            <div class="mock-box">
+
+              <strong>
+                🎂 Birthday
+              </strong>
+
+              <span>
+                Ucapan + foto + kejutan
+              </span>
+
+            </div>
+
+
+            <div class="mock-box">
+
+              <strong>
+                🌷 Mother's Day
+              </strong>
+
+              <span>
+                Untuk ibu tersayang
+              </span>
+
+            </div>
+
+
+            <div class="mock-box">
+
+              <strong>
+                🎓 Graduation
+              </strong>
+
+              <span>
+                Rayakan perjalanan mereka
+              </span>
+
+            </div>
+
+
+            <div class="mock-box">
+
+              <strong>
+                🫶 Friendship
+              </strong>
+
+              <span>
+                Tentang persahabatan
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="floating">
+            mulai dari Rp25.000 ✨
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         KATEGORI
+    ========================= -->
+
+    <section
+      id="kategori"
+      class="wrap"
+    >
+
+      <div class="section-head">
+
+        <div>
+
+          <div class="eyebrow">
+            Pilih kejutanmu
+          </div>
+
+          <h2>
+            Ada yang cocok buatmu?
+          </h2>
+
+        </div>
+
+        <p>
+          Setiap kategori punya pilihan template tersendiri.
+          Klik “Pilih Template” untuk melihat koleksi atau pratinjau.
+        </p>
+
+      </div>
+
+
+      <div class="categories" id="categoriesContainer">
+        <!-- Kartu Kategori akan di-render secara otomatis oleh JavaScript -->
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CARA KERJA
+    ========================= -->
+
+    <section
+      id="cara-kerja"
+      class="wrap"
+    >
+
+      <div class="section-head">
+
+        <div>
+
+          <div class="eyebrow">
+            Gampang kok
+          </div>
+
+          <h2>
+            Caranya gimana?
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="how">
+
+        <div class="step">
+
+          <div class="step-num">
+            1
+          </div>
+
+          <h3>
+            Pilih website
+          </h3>
+
+          <p>
+            Pilih kategori dan desain template yang paling cocok
+            dengan pesan yang ingin kamu sampaikan.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-num">
+            2
+          </div>
+
+          <h3>
+            Kirim detail
+          </h3>
+
+          <p>
+            Kirim nama, foto, pesan, musik,
+            tema, warna, dan detail lain
+            yang ingin dimasukkan.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-num">
+            3
+          </div>
+
+          <h3>
+            Dapatkan link
+          </h3>
+
+          <p>
+            Website dibuat, lalu kamu mendapatkan
+            link yang siap dikirim sebagai kejutan.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         HARGA
+    ========================= -->
+
+    <section
+      id="harga"
+      class="wrap"
+    >
+
+      <div class="price-banner">
+
+        <div>
+
+          <h2>
+            Mulai dari Rp25.000. 💗
+          </h2>
+
+          <p>
+            Website Birthday, Confession, Graduation,
+            Mabar, Mother's Day, Father's Day,
+            dan Friendship tersedia mulai Rp25.000.
+            Untuk konsep bebas, tersedia paket Custom Rp30.000.
+          </p>
+
+        </div>
+
+
+        <div class="big-price">
+
+          Rp25.000
+          <span>
+            / mulai
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="wrap footer-inner">
+
+      <div>
+        <strong>
+          A Little Something
+        </strong>
+
+        — beberapa pesan layak jadi website.
+      </div>
+
+      <div>
+        © 2026 A Little Something
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       PREVIEW MODAL
+  ========================= -->
+
+  <div
+    class="modal"
+    id="previewModal"
+    onclick="closePreview(event)"
+  >
+
+    <div
+      class="modal-card"
+      onclick="event.stopPropagation()"
+    >
+
+      <button
+        class="close"
+        onclick="closePreview()"
+      >
+        ×
+      </button>
+
+
+      <div
+        class="eyebrow"
+        id="previewEyebrow"
+      >
+        PREVIEW TEMPLATE
+      </div>
+
+
+      <h2
+        id="previewTitle"
+        style="font-size:34px;margin:0 0 8px"
+      >
+        Birthday
+      </h2>
+
+
+      <p
+        id="previewDescription"
+        style="
+          color:var(--muted);
+          line-height:1.6;
+          margin:0
+        "
+      ></p>
+
+
+      <!-- Container tempat daftar template akan muncul -->
+      <div class="templates-list" id="templatesListContainer"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+    /* 
+      ===============================================================
+      PANDUAN MENAMBAH TEMPLATE BARU KE DEPANNIA:
+      ---------------------------------------------------------------
+      Cukup tambahkan objek baru ke dalam array `templates` pada
+      kategori yang kamu mau. 
+
+      Contoh:
+      {
+        id: "birthday-3",
+        name: "Template 3 - Retro Gaming",
+        desc: "Tema piksel retro dengan musik chiptune.",
+        link: "birthday/birthday-v3.html"
+      }
+      ===============================================================
+    */
+
+    const templatesData = {
+      birthday: {
+        icon: "🎂",
+        title: "Birthday",
+        classKey: "cat-birthday",
+        price: "Rp25.000",
+        isCustomPrice: false,
+        description: "Website kejutan ulang tahun yang bisa diisi dengan ucapan, foto, musik, animasi, dan pesan pribadi.",
+        templates: [
+          {
+            id: "birthday-1",
+            name: "Template 1 — Soft Pastel",
+            desc: "Desain manis dengan warna pastel, galeri foto, dan balon animasi.",
+            link: "birthday/birthday.html"
+          },
+          {
+            id: "birthday-v2",
+            name: "Template 2 — Magical Fantasy",
+            desc: "Nuansa fantasy dengan warna mengkilap.",
+            link: "birthday/birthday-v2.html"
+          },
+          
+        ]
+      },
+
+      confession: {
+        icon: "💗",
+        title: "Love Confession",
+        classKey: "cat-confession",
+        price: "Rp25.000",
+        isCustomPrice: false,
+        description: "Halaman personal untuk menyampaikan perasaan dengan cara yang lebih berkesan daripada sekadar mengirim chat.",
+        templates: [
+          {
+            id: "confession-1",
+            name: "Template 1 — Classic Letter",
+            desc: "Tampilan seperti surat cinta interaktif yang bisa dibuka pelan-pelan.",
+            link: "confession/confession.html"
+          }
+        ]
+      },
+
+      graduation: {
+        icon: "🎓",
+        title: "Graduation",
+        classKey: "cat-graduation",
+        price: "Rp25.000",
+        isCustomPrice: false,
+        description: "Rayakan kelulusan dengan halaman yang berisi ucapan, foto perjalanan, kenangan, dan pesan spesial.",
+        templates: [
+          {
+            id: "graduation-1",
+            name: "Template 1 — Academic Journal",
+            desc: "Gaya majalah/jurnal apresiasi dengan kilas balik foto perjalanan.",
+            link: "graduation/graduation.html"
+          },
+
+          {
+            id: "graduation-2",
+            name:"graduation2",
+            desc: "Ucapan selamat atas kelulusan dengan warna coklat pastel yang hangat",
+            link: "graduation/graduation2.html"
+          }
+        ]
+      },
+
+      mabar: {
+        icon: "🎮",
+        title: "Ajak Mabar",
+        classKey: "cat-mabar",
+        price: "Rp25.000",
+        isCustomPrice: false,
+        description: "Ajak teman bermain dengan cara yang lebih lucu dan interaktif. Cocok untuk teman yang susah diajak mabar.",
+        templates: [
+          {
+            id: "mabar-1",
+            name: "Template 1 — Game Quest Invitation",
+            desc: "Desain bergaya Game UI dengan pilihan tombol 'Terima/Tolak' yang interaktif.",
+            link: "mabar/mabar.html"
+          }
+        ]
+      },
+
+      mothers: {
+        icon: "🌷",
+        title: "Mother's Day",
+        classKey: "cat-mothers",
+        price: "Rp25.000",
+        isCustomPrice: false,
+        description: "Website penuh kasih untuk ibu, berisi ucapan, foto kenangan, cerita kecil, dan pesan terima kasih.",
+        templates: [
+          {
+            id: "mothers-1",
+            name: "Template 1 — Warm Floral",
+            desc: "Elegan dan lembut dengan hiasan kelopak bunga dan galeri kenangan.",
+            link: "mothers-day/mothers-day.html"
+          },
+
+          {
+            id:"mothers-2",
+            name: "mothers-day2",
+            desc: "ucapan hari ibu dengan warna ungu yang elegan",
+            link: "mothers-day/mothers-day2.html"
+          }
+        ]
+      },
+
+      fathers: {
+        icon: "👔",
+        title: "Father's Day",
+        classKey: "cat-fathers",
+        price: "Rp25.000",
+        isCustomPrice: false,
+        description: "Hadiah digital untuk ayah dengan cerita, apresiasi, foto, kenangan, dan pesan tersirat.",
+        templates: [
+          {
+            id: "fathers-1",
+            name: "Template 1 — Minimalist Memoir",
+            desc: "Desain bersih, tenang, dan fokus pada pesan ucapan yang bermakna.",
+            link: "fathers-day/fathers-day.html"
+          }
+        ]
+      },
+
+      friendship: {
+        icon: "🫶",
+        title: "Friendship",
+        classKey: "cat-friendship",
+        price: "Rp25.000",
+        isCustomPrice: false,
+        description: "Website untuk mengabadikan cerita persahabatan, foto, inside jokes, kenangan, dan pesan khusus.",
+        templates: [
+          {
+            id: "friendship-1",
+            name: "Template 1 — Scrapbook Memory",
+            desc: "Gaya tempelan polaroid dan catatan stiker yang playful.",
+            link: "friendship/friendship.html"
+          }
+        ]
+      },
+
+      custom: {
+        icon: "✨",
+        title: "Custom",
+        classKey: "cat-custom",
+        price: "Rp30.000",
+        isCustomPrice: true,
+        description: "Punya ide yang berbeda? Jelaskan konsep, tema, cerita, fitur, atau request bebasmu. Website akan dibuat khusus.",
+        templates: [
+          {
+            id: "custom-1",
+            name: "Full Custom Concept",
+            desc: "Bahas ide impianmu langsung dan kita wujudkan dalam bentuk website unik.",
+            link: "#harga"
+          }
+        ]
+      }
+    };
+
+
+    // Function untuk membuat elemen kartu kategori di halaman utama secara otomatis
+    function renderCategories() {
+      const container = document.getElementById("categoriesContainer");
+      container.innerHTML = "";
+
+      Object.keys(templatesData).forEach(key => {
+        const cat = templatesData[key];
+        const templateCount = cat.templates.length;
+
+        const article = document.createElement("article");
+        article.className = `category ${cat.classKey}`;
+
+        article.innerHTML = `
+          <div>
+            <div class="icon">${cat.icon}</div>
+            <h3>${cat.title}</h3>
+            <p>${cat.description}</p>
+            <span class="badge-count">✨ ${templateCount} Template Tersedia</span>
+            <div class="price ${cat.isCustomPrice ? 'price-custom' : ''}">
+              ${cat.price}
+              <small>/ website</small>
+            </div>
+          </div>
+
+          <div class="category-footer">
+            <button
+              class="btn btn-secondary"
+              style="width: 100%"
+              onclick="openPreview('${key}')"
+            >
+              Lihat Template (${templateCount}) →
+            </button>
+          </div>
+        `;
+
+        container.appendChild(article);
+      });
+    }
+
+
+    // Function untuk membuka modal preview dengan pilihan template
+    function openPreview(type) {
+      const d = templatesData[type];
+
+      document.getElementById("previewTitle").textContent = d.title;
+      document.getElementById("previewEyebrow").textContent = `PILIHAN TEMPLATE ${d.title.toUpperCase()}`;
+      document.getElementById("previewDescription").textContent = d.description;
+
+      const listContainer = document.getElementById("templatesListContainer");
+      listContainer.innerHTML = "";
+
+      d.templates.forEach(tpl => {
+        const item = document.createElement("div");
+        item.className = "template-item-card";
+
+        const actionText = type === "custom" ? "Request Custom →" : "Buka Contoh Halaman →";
+
+        item.innerHTML = `
+          <div class="template-item-header">
+            <h4>${tpl.name}</h4>
+          </div>
+          <p class="template-item-desc">${tpl.desc}</p>
+          <div class="template-item-actions">
+            <a class="btn btn-primary" href="${tpl.link}">
+              ${actionText}
+            </a>
+          </div>
+        `;
+
+        listContainer.appendChild(item);
+      });
+
+      document.getElementById("previewModal").classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+
+    function closePreview() {
+      document.getElementById("previewModal").classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") {
+        closePreview();
+      }
+    });
+
+    // Inisialisasi awal saat halaman dimuat
+    renderCategories();
+  </script>
+
+</body>
+</html>

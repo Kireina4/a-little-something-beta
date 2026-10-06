@@ -1,0 +1,3462 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>For Your Graduation 🎓 | A Little Something</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500;600;700&family=Patrick+Hand&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           ROOT
+        ====================================================== */
+
+        :root {
+
+            --brown-dark: #604939;
+
+            --brown: #806653;
+
+            --brown-light: #aa8d76;
+
+            --cream: #fffaf5;
+
+            --cream-soft: #f7eee6;
+
+            --beige: #e6d3c0;
+
+            --beige-light: #efe1d4;
+
+            --paper: #fffdf9;
+
+            --text: #705e50;
+
+            --white: #ffffff;
+
+            --shadow:
+                0 20px 60px
+                rgba(96, 73, 57, .15);
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+        html,
+        body {
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: hidden;
+
+        }
+
+
+        body {
+
+            font-family:
+                "DM Sans",
+                sans-serif;
+
+            background:
+                var(--cream);
+
+            color:
+                var(--brown-dark);
+
+        }
+
+
+        button {
+
+            font-family:
+                inherit;
+
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ====================================================== */
+
+        .background {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(230, 211, 192, .45),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(169, 141, 119, .18),
+                    transparent 35%
+                );
+
+        }
+
+
+        .blob {
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            opacity: .35;
+
+            filter: blur(2px);
+
+        }
+
+
+        .blob.one {
+
+            width: 300px;
+
+            height: 300px;
+
+            background:
+                #ead9c8;
+
+            top:
+                -140px;
+
+            left:
+                -100px;
+
+        }
+
+
+        .blob.two {
+
+            width: 400px;
+
+            height: 400px;
+
+            background:
+                #e8d5c3;
+
+            right:
+                -180px;
+
+            bottom:
+                -180px;
+
+        }
+
+
+        /* =====================================================
+           APP
+        ====================================================== */
+
+        #app {
+
+            position:
+                relative;
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            z-index:
+                2;
+
+        }
+
+
+        /* =====================================================
+           PAGES
+        ====================================================== */
+
+        .page {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            padding:
+                75px 25px 105px;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            opacity:
+                0;
+
+            visibility:
+                hidden;
+
+            pointer-events:
+                none;
+
+            transform:
+                translateX(45px)
+                scale(.98);
+
+            transition:
+
+                opacity .6s ease,
+
+                transform .6s
+                cubic-bezier(.2,.8,.2,1),
+
+                visibility .6s;
+
+        }
+
+
+        .page.active {
+
+            opacity:
+                1;
+
+            visibility:
+                visible;
+
+            pointer-events:
+                auto;
+
+            transform:
+                translateX(0)
+                scale(1);
+
+        }
+
+
+        .page.previous {
+
+            transform:
+                translateX(-45px)
+                scale(.98);
+
+        }
+
+
+        .page-content {
+
+            width:
+                min(950px, 100%);
+
+            max-height:
+                100%;
+
+            text-align:
+                center;
+
+        }
+
+
+        /* =====================================================
+           OPENING
+        ====================================================== */
+
+        #opening {
+
+            z-index:
+                30;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    #fffdf9,
+                    #f1e2d4
+                );
+
+        }
+
+
+        .opening-content {
+
+            width:
+                min(500px, 100%);
+
+            text-align:
+                center;
+
+            animation:
+                openingAppear 1s ease;
+
+        }
+
+
+        @keyframes openingAppear {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+                    translateY(30px);
+
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        .brand {
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                4px;
+
+            text-transform:
+                uppercase;
+
+            color:
+                var(--brown-light);
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .opening-title {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(50px, 11vw, 80px);
+
+            line-height:
+                .95;
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .opening-subtitle {
+
+            color:
+                var(--brown-light);
+
+            line-height:
+                1.7;
+
+            font-size:
+                15px;
+
+            margin-bottom:
+                40px;
+
+        }
+
+
+        /* =====================================================
+           ENVELOPE
+        ====================================================== */
+
+        .envelope-wrapper {
+
+            width:
+                290px;
+
+            height:
+                195px;
+
+            margin:
+                auto;
+
+            position:
+                relative;
+
+            cursor:
+                pointer;
+
+            transition:
+                transform .3s ease;
+
+        }
+
+
+        .envelope-wrapper:hover {
+
+            transform:
+                translateY(-7px);
+
+        }
+
+
+        .envelope {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+                #d5bba4;
+
+            border-radius:
+                8px;
+
+            box-shadow:
+                var(--shadow);
+
+            overflow:
+                hidden;
+
+        }
+
+
+        .envelope::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    transparent 49%,
+                    #c3a48c 50%
+                );
+
+        }
+
+
+        .envelope::after {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            background:
+
+                linear-gradient(
+                    215deg,
+                    transparent 49%,
+                    #c3a48c 50%
+                );
+
+        }
+
+
+        .flap {
+
+            position:
+                absolute;
+
+            top:
+                0;
+
+            left:
+                0;
+
+            width:
+                0;
+
+            height:
+                0;
+
+            border-left:
+                145px solid transparent;
+
+            border-right:
+                145px solid transparent;
+
+            border-top:
+                110px solid #ead8c7;
+
+            transform-origin:
+                top;
+
+            z-index:
+                5;
+
+            transition:
+                transform .8s
+                cubic-bezier(.2,.8,.2,1);
+
+        }
+
+
+        .envelope-wrapper.open
+        .flap {
+
+            transform:
+                rotateX(180deg);
+
+        }
+
+
+        .seal {
+
+            position:
+                absolute;
+
+            left:
+                50%;
+
+            top:
+                53%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width:
+                55px;
+
+            height:
+                55px;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--brown);
+
+            color:
+                white;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            font-size:
+                23px;
+
+            z-index:
+                10;
+
+        }
+
+
+        .open-btn {
+
+            margin-top:
+                35px;
+
+            padding:
+                14px 28px;
+
+            border:
+                none;
+
+            border-radius:
+                50px;
+
+            background:
+                var(--brown-dark);
+
+            color:
+                white;
+
+            cursor:
+                pointer;
+
+            font-weight:
+                600;
+
+            box-shadow:
+                0 8px 20px
+                rgba(96,73,57,.2);
+
+            transition:
+                .3s;
+
+        }
+
+
+        .open-btn:hover {
+
+            background:
+                var(--brown);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =====================================================
+           TYPOGRAPHY
+        ====================================================== */
+
+        .eyebrow {
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                4px;
+
+            text-transform:
+                uppercase;
+
+            color:
+                var(--brown-light);
+
+            margin-bottom:
+                18px;
+
+        }
+
+
+        h1,
+        h2 {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+        }
+
+
+        .big-title {
+
+            font-size:
+                clamp(48px, 9vw, 90px);
+
+            line-height:
+                .95;
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        .big-title span {
+
+            color:
+                var(--brown-light);
+
+            font-style:
+                italic;
+
+        }
+
+
+        .description {
+
+            max-width:
+                620px;
+
+            margin:
+                auto;
+
+            color:
+                var(--text);
+
+            line-height:
+                1.85;
+
+            font-size:
+                15px;
+
+        }
+
+
+        /* =====================================================
+           PAGE 2 — JOURNEY
+        ====================================================== */
+
+        .journey-title {
+
+            font-size:
+                clamp(40px, 8vw, 65px);
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        .journey-text {
+
+            max-width:
+                650px;
+
+            margin:
+                auto;
+
+            line-height:
+                1.9;
+
+            color:
+                var(--text);
+
+        }
+
+
+        .journey-highlight {
+
+            display:
+                inline-block;
+
+            margin-top:
+                30px;
+
+            padding:
+                12px 20px;
+
+            background:
+                var(--beige-light);
+
+            border-radius:
+                50px;
+
+            color:
+                var(--brown);
+
+            font-size:
+                13px;
+
+        }
+
+
+        /* =====================================================
+           TIMELINE
+        ====================================================== */
+
+        .timeline {
+
+            width:
+                min(760px, 100%);
+
+            margin:
+                35px auto 0;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                18px;
+
+        }
+
+
+        .timeline-card {
+
+            background:
+                var(--paper);
+
+            padding:
+                25px 18px;
+
+            border-radius:
+                10px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(96,73,57,.09);
+
+            transition:
+                transform .3s;
+
+        }
+
+
+        .timeline-card:hover {
+
+            transform:
+                translateY(-7px);
+
+        }
+
+
+        .timeline-icon {
+
+            font-size:
+                30px;
+
+            margin-bottom:
+                12px;
+
+        }
+
+
+        .timeline-card h3 {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                20px;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .timeline-card p {
+
+            color:
+                var(--text);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           MEMORY PAGES
+        ====================================================== */
+
+        .memory-heading {
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        .memory-heading h2 {
+
+            font-size:
+                clamp(36px, 7vw, 55px);
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .memory-heading p {
+
+            color:
+                var(--brown-light);
+
+            font-size:
+                14px;
+
+        }
+
+
+        .photo-grid {
+
+            width:
+                min(850px, 100%);
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                18px;
+
+        }
+
+
+        .polaroid {
+
+            background:
+                white;
+
+            padding:
+                9px 9px 18px;
+
+            box-shadow:
+                0 12px 30px
+                rgba(96,73,57,.12);
+
+            transition:
+                transform .35s ease;
+
+        }
+
+
+        .polaroid:nth-child(1) {
+
+            transform:
+                rotate(-3deg);
+
+        }
+
+
+        .polaroid:nth-child(2) {
+
+            transform:
+                rotate(2deg);
+
+        }
+
+
+        .polaroid:nth-child(3) {
+
+            transform:
+                rotate(-2deg);
+
+        }
+
+
+        .polaroid:nth-child(4) {
+
+            transform:
+                rotate(2deg);
+
+        }
+
+
+        .polaroid:nth-child(5) {
+
+            transform:
+                rotate(-2deg);
+
+        }
+
+
+        .polaroid:nth-child(6) {
+
+            transform:
+                rotate(3deg);
+
+        }
+
+
+        .polaroid:hover {
+
+            transform:
+                rotate(0)
+                translateY(-8px)
+                scale(1.02);
+
+        }
+
+
+        .photo {
+
+            width:
+                100%;
+
+            aspect-ratio:
+                1 / 1;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ead9c8,
+                    #d3bba5
+                );
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            font-size:
+                28px;
+
+            color:
+                rgba(96,73,57,.4);
+
+            overflow:
+                hidden;
+
+        }
+
+
+        .photo img {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+        }
+
+
+        .caption {
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size:
+                17px;
+
+            color:
+                var(--brown);
+
+            margin-top:
+                9px;
+
+        }
+
+
+        /* =====================================================
+           HARD DAYS
+        ====================================================== */
+
+        .hard-days {
+
+            width:
+                min(700px, 100%);
+
+            margin:
+                auto;
+
+            padding:
+                45px 35px;
+
+            background:
+                var(--paper);
+
+            box-shadow:
+                var(--shadow);
+
+            border-radius:
+                8px;
+
+        }
+
+
+        .hard-days .icon {
+
+            font-size:
+                50px;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .hard-days h2 {
+
+            font-size:
+                clamp(38px, 7vw, 55px);
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .hard-days p {
+
+            line-height:
+                1.9;
+
+            color:
+                var(--text);
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .quote {
+
+            margin-top:
+                25px;
+
+            padding:
+                18px;
+
+            border-left:
+                3px solid
+                var(--beige);
+
+            text-align:
+                left;
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size:
+                21px;
+
+            color:
+                var(--brown);
+
+        }
+
+
+        /* =====================================================
+           LETTER
+        ====================================================== */
+
+        .letter {
+
+            width:
+                min(700px, 100%);
+
+            margin:
+                auto;
+
+            background:
+                var(--paper);
+
+            padding:
+                clamp(30px, 6vw, 60px);
+
+            text-align:
+                left;
+
+            box-shadow:
+                var(--shadow);
+
+            position:
+                relative;
+
+            transform:
+                rotate(-.4deg);
+
+            max-height:
+                72vh;
+
+            overflow-y:
+                auto;
+
+        }
+
+
+        .letter-tape {
+
+            position:
+                absolute;
+
+            width:
+                100px;
+
+            height:
+                22px;
+
+            top:
+                -10px;
+
+            left:
+                50%;
+
+            transform:
+                translateX(-50%)
+                rotate(-2deg);
+
+            background:
+                rgba(216,195,174,.6);
+
+        }
+
+
+        .letter h2 {
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size:
+                33px;
+
+            font-weight:
+                400;
+
+            color:
+                var(--brown);
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .letter p {
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size:
+                19px;
+
+            line-height:
+                1.75;
+
+            color:
+                var(--text);
+
+            margin-bottom:
+                15px;
+
+        }
+
+
+        .signature {
+
+            text-align:
+                right;
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size:
+                23px;
+
+            color:
+                var(--brown);
+
+            margin-top:
+                25px;
+
+        }
+
+
+        /* =====================================================
+           FUTURE
+        ====================================================== */
+
+        .future-title {
+
+            font-size:
+                clamp(40px, 8vw, 65px);
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .future-title span {
+
+            color:
+                var(--brown-light);
+
+            font-style:
+                italic;
+
+        }
+
+
+        .future-cards {
+
+            width:
+                min(750px, 100%);
+
+            margin:
+                35px auto 0;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                18px;
+
+        }
+
+
+        .future-card {
+
+            padding:
+                25px 18px;
+
+            background:
+                var(--paper);
+
+            border-radius:
+                10px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(96,73,57,.08);
+
+        }
+
+
+        .future-card span {
+
+            font-size:
+                28px;
+
+            display:
+                block;
+
+            margin-bottom:
+                12px;
+
+        }
+
+
+        .future-card p {
+
+            color:
+                var(--text);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.6;
+
+        }
+
+
+        /* =====================================================
+           ACHIEVEMENT
+        ====================================================== */
+
+        .achievement-box {
+
+            width:
+                min(720px, 100%);
+
+            margin:
+                auto;
+
+            padding:
+                60px 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--brown),
+                    var(--brown-light)
+                );
+
+            color:
+                white;
+
+            border-radius:
+                12px;
+
+            box-shadow:
+                var(--shadow);
+
+        }
+
+
+        .achievement-icon {
+
+            font-size:
+                60px;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .achievement-box h2 {
+
+            font-size:
+                clamp(40px, 8vw, 65px);
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .achievement-box p {
+
+            max-width:
+                570px;
+
+            margin:
+                auto;
+
+            line-height:
+                1.8;
+
+            color:
+                #f8eee7;
+
+        }
+
+
+        /* =====================================================
+           FINAL
+        ====================================================== */
+
+        .final-heart {
+
+            font-size:
+                42px;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .final-title {
+
+            font-size:
+                clamp(45px, 9vw, 82px);
+
+            line-height:
+                .95;
+
+            margin-bottom:
+                25px;
+
+        }
+
+
+        .final-title span {
+
+            color:
+                var(--brown-light);
+
+            font-style:
+                italic;
+
+        }
+
+
+        .final-message {
+
+            max-width:
+                580px;
+
+            margin:
+                auto;
+
+            line-height:
+                1.9;
+
+            color:
+                var(--text);
+
+        }
+
+
+        .brand-end {
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size:
+                28px;
+
+            color:
+                var(--brown);
+
+            margin-top:
+                30px;
+
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
+
+        #navigation {
+
+            position:
+                fixed;
+
+            left:
+                50%;
+
+            bottom:
+                22px;
+
+            transform:
+                translateX(-50%);
+
+            z-index:
+                50;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+        }
+
+
+        .nav-btn {
+
+            width:
+                43px;
+
+            height:
+                43px;
+
+            border:
+                none;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,253,249,.92);
+
+            color:
+                var(--brown-dark);
+
+            box-shadow:
+                0 7px 20px
+                rgba(96,73,57,.12);
+
+            cursor:
+                pointer;
+
+            transition:
+                .3s;
+
+        }
+
+
+        .nav-btn:hover {
+
+            background:
+                var(--brown-dark);
+
+            color:
+                white;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        #pageIndicator {
+
+            padding:
+                9px 16px;
+
+            border-radius:
+                50px;
+
+            background:
+                rgba(255,253,249,.92);
+
+            color:
+                var(--brown-light);
+
+            font-size:
+                12px;
+
+            box-shadow:
+                0 7px 20px
+                rgba(96,73,57,.1);
+
+        }
+
+
+        /* =====================================================
+           MUSIC
+        ====================================================== */
+
+        #musicButton {
+
+            position:
+                fixed;
+
+            right:
+                22px;
+
+            bottom:
+                22px;
+
+            z-index:
+                55;
+
+            width:
+                46px;
+
+            height:
+                46px;
+
+            border:
+                none;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--brown-dark);
+
+            color:
+                white;
+
+            cursor:
+                pointer;
+
+            box-shadow:
+                0 7px 20px
+                rgba(96,73,57,.2);
+
+        }
+
+
+        #musicButton.playing {
+
+            animation:
+                musicPulse 1.4s infinite;
+
+        }
+
+
+        @keyframes musicPulse {
+
+            0% {
+
+                box-shadow:
+                    0 0 0 0
+                    rgba(96,73,57,.35);
+
+            }
+
+            70% {
+
+                box-shadow:
+                    0 0 0 12px
+                    rgba(96,73,57,0);
+
+            }
+
+            100% {
+
+                box-shadow:
+                    0 0 0 0
+                    rgba(96,73,57,0);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CONFETTI
+        ====================================================== */
+
+        .confetti {
+
+            position:
+                fixed;
+
+            top:
+                -20px;
+
+            width:
+                8px;
+
+            height:
+                12px;
+
+            z-index:
+                100;
+
+            pointer-events:
+                none;
+
+            animation:
+                confettiFall
+                linear
+                forwards;
+
+        }
+
+
+        @keyframes confettiFall {
+
+            to {
+
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+
+                opacity:
+                    0;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 700px) {
+
+            .page {
+
+                padding:
+                    60px 16px 95px;
+
+            }
+
+
+            .envelope-wrapper {
+
+                width:
+                    250px;
+
+                height:
+                    170px;
+
+            }
+
+
+            .flap {
+
+                border-left-width:
+                    125px;
+
+                border-right-width:
+                    125px;
+
+                border-top-width:
+                    95px;
+
+            }
+
+
+            .timeline {
+
+                gap:
+                    8px;
+
+            }
+
+
+            .timeline-card {
+
+                padding:
+                    18px 8px;
+
+            }
+
+
+            .timeline-card h3 {
+
+                font-size:
+                    16px;
+
+            }
+
+
+            .timeline-card p {
+
+                font-size:
+                    11px;
+
+            }
+
+
+            .photo-grid {
+
+                gap:
+                    8px;
+
+            }
+
+
+            .polaroid {
+
+                padding:
+                    6px 6px 13px;
+
+            }
+
+
+            .caption {
+
+                font-size:
+                    14px;
+
+            }
+
+
+            .letter {
+
+                max-height:
+                    67vh;
+
+                padding:
+                    35px 25px;
+
+            }
+
+
+            .letter p {
+
+                font-size:
+                    17px;
+
+            }
+
+
+            .future-cards {
+
+                gap:
+                    8px;
+
+            }
+
+
+            .future-card {
+
+                padding:
+                    18px 8px;
+
+            }
+
+
+            .future-card p {
+
+                font-size:
+                    11px;
+
+            }
+
+
+            #navigation {
+
+                bottom:
+                    16px;
+
+            }
+
+
+            #musicButton {
+
+                right:
+                    15px;
+
+                bottom:
+                    16px;
+
+            }
+
+        }
+
+
+        @media (max-height: 700px) {
+
+            .page {
+
+                padding-top:
+                    40px;
+
+                padding-bottom:
+                    80px;
+
+            }
+
+
+            .letter {
+
+                max-height:
+                    63vh;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div class="background">
+
+        <div class="blob one"></div>
+
+        <div class="blob two"></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         APP
+    ====================================================== -->
+
+    <div id="app">
+
+
+        <!-- =================================================
+             PAGE 0 — OPENING
+        ================================================== -->
+
+        <section
+            class="page active"
+            id="opening"
+        >
+
+            <div class="opening-content">
+
+                <div class="brand">
+                    A Little Something
+                </div>
+
+                <h1 class="opening-title">
+                    You Did It!
+                </h1>
+
+                <p class="opening-subtitle">
+                    There's a little surprise waiting
+                    for you inside.
+                </p>
+
+
+                <div
+                    class="envelope-wrapper"
+                    id="envelope"
+                    onclick="openLetter()"
+                >
+
+                    <div class="envelope">
+
+                        <div class="flap"></div>
+
+                        <div class="seal">
+                            🎓
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="open-btn"
+                    onclick="openLetter()"
+                >
+                    Open Your Letter ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 1 — WELCOME
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page1"
+        >
+
+            <div class="page-content">
+
+                <div class="eyebrow">
+                    This moment is yours
+                </div>
+
+                <h1 class="big-title">
+
+                    Congratulations,<br>
+
+                    <span>Graduate!</span>
+
+                </h1>
+
+                <p class="description">
+
+                    Setelah sekian lama belajar,
+                    mengerjakan tugas,
+                    menghadapi ujian,
+                    mengejar deadline,
+                    dan melewati berbagai macam hari...
+
+                    akhirnya kamu sampai juga
+                    di sini.
+
+                    Hari ini adalah harimu.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 2 — JOURNEY
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page2"
+        >
+
+            <div class="page-content">
+
+                <div class="eyebrow">
+                    Looking back
+                </div>
+
+                <h2 class="journey-title">
+                    Look How Far You've Come.
+                </h2>
+
+                <p class="journey-text">
+
+                    Rasanya baru kemarin kamu
+                    memulai perjalanan ini.
+
+                    Masih banyak hal yang belum kamu
+                    tahu, masih banyak tempat yang
+                    belum kamu kenal, dan mungkin
+                    kamu juga belum tahu akan berakhir
+                    di mana.
+
+                    Tapi hari demi hari berlalu.
+
+                    Dan tanpa sadar...
+
+                    kamu sudah sampai sejauh ini.
+
+                </p>
+
+                <div class="journey-highlight">
+                    Every step mattered. ♡
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 3 — TIMELINE
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page3"
+        >
+
+            <div class="page-content">
+
+                <div class="eyebrow">
+                    Your story
+                </div>
+
+                <h2 class="journey-title">
+                    A Little Timeline
+                </h2>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-card">
+
+                        <div class="timeline-icon">
+                            🌱
+                        </div>
+
+                        <h3>
+                            The Beginning
+                        </h3>
+
+                        <p>
+                            Hari ketika semuanya
+                            baru saja dimulai.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-card">
+
+                        <div class="timeline-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            The Journey
+                        </h3>
+
+                        <p>
+                            Tugas, ujian, teman,
+                            tawa, dan berbagai
+                            cerita.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-card">
+
+                        <div class="timeline-icon">
+                            🎓
+                        </div>
+
+                        <h3>
+                            The Finish Line
+                        </h3>
+
+                        <p>
+                            Dan akhirnya...
+                            graduation day.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 4 — MEMORY I
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page4"
+        >
+
+            <div class="page-content">
+
+                <div class="memory-heading">
+
+                    <div class="eyebrow">
+                        Memory Lane
+                    </div>
+
+                    <h2>
+                        The Early Days
+                    </h2>
+
+                    <p>
+                        The moments where it all began.
+                    </p>
+
+                </div>
+
+
+                <div class="photo-grid">
+
+
+                    <!-- PHOTO 1 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+
+                            <!--
+                            GANTI:
+
+                            📸
+
+                            MENJADI:
+
+                            <img src="images/photo1.jpg">
+                            -->
+
+                            📸
+
+                        </div>
+
+                        <div class="caption">
+                            Where it began.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 2 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            📷
+                        </div>
+
+                        <div class="caption">
+                            First memories.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 3 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            🌷
+                        </div>
+
+                        <div class="caption">
+                            New beginnings.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 4 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            ☕
+                        </div>
+
+                        <div class="caption">
+                            Little moments.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 5 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            ✏️
+                        </div>
+
+                        <div class="caption">
+                            Learning together.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 6 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            ♡
+                        </div>
+
+                        <div class="caption">
+                            Before we knew it.
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 5 — MEMORY II
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page5"
+        >
+
+            <div class="page-content">
+
+                <div class="memory-heading">
+
+                    <div class="eyebrow">
+                        Memory Lane
+                    </div>
+
+                    <h2>
+                        The Good Days
+                    </h2>
+
+                    <p>
+                        The memories we'll probably
+                        talk about years from now.
+                    </p>
+
+                </div>
+
+
+                <div class="photo-grid">
+
+
+                    <!-- PHOTO 7 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            🎒
+                        </div>
+
+                        <div class="caption">
+                            Another day, another story.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 8 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            📚
+                        </div>
+
+                        <div class="caption">
+                            Somehow we survived.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 9 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            😂
+                        </div>
+
+                        <div class="caption">
+                            The silly moments.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 10 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            🌤️
+                        </div>
+
+                        <div class="caption">
+                            Ordinary days.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 11 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            🤎
+                        </div>
+
+                        <div class="caption">
+                            The people who stayed.
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHOTO 12 -->
+
+                    <div class="polaroid">
+
+                        <div class="photo">
+                            🎓
+                        </div>
+
+                        <div class="caption">
+                            Almost there.
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 6 — HARD DAYS
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page6"
+        >
+
+            <div class="page-content">
+
+                <div class="hard-days">
+
+                    <div class="icon">
+                        ☕
+                    </div>
+
+                    <div class="eyebrow">
+                        Don't forget this
+                    </div>
+
+                    <h2>
+                        The Hard Days Mattered Too.
+                    </h2>
+
+                    <p>
+
+                        Kita sering mengingat
+                        hari-hari yang menyenangkan.
+
+                        Tapi jangan lupa dengan
+                        hari-hari ketika kamu hampir
+                        menyerah.
+
+                    </p>
+
+                    <p>
+
+                        Hari ketika tugas terasa
+                        terlalu banyak.
+
+                        Hari ketika hasil ujian
+                        tidak sesuai harapan.
+
+                        Hari ketika kamu cuma ingin
+                        semuanya cepat selesai.
+
+                    </p>
+
+                    <p>
+
+                        Kamu tetap berjalan.
+
+                        Bahkan ketika pelan.
+
+                        Dan mungkin justru itulah
+                        bagian paling hebat dari
+                        perjalananmu.
+
+                    </p>
+
+
+                    <div class="quote">
+
+                        "You don't have to walk fast.
+                        You just have to keep going."
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 7 — LETTER
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page7"
+        >
+
+            <div class="page-content">
+
+                <div class="letter">
+
+                    <div class="letter-tape"></div>
+
+                    <h2>
+                        Dear You,
+                    </h2>
+
+
+                    <p>
+                        Selamat atas kelulusanmu! 🎓
+                    </p>
+
+
+                    <p>
+
+                        Kalau kamu sedang membaca
+                        ini, berarti satu perjalanan
+                        besar dalam hidupmu akhirnya
+                        sampai pada satu titik yang
+                        sangat layak dirayakan.
+
+                    </p>
+
+
+                    <p>
+
+                        Aku mungkin nggak tahu semua
+                        hal yang sudah kamu lewati.
+
+                        Aku nggak tahu berapa banyak
+                        malam yang kamu habiskan
+                        untuk belajar, berapa banyak
+                        tugas yang membuatmu pusing,
+                        atau berapa kali kamu merasa
+                        ingin berhenti.
+
+                    </p>
+
+
+                    <p>
+
+                        Tapi aku tahu satu hal.
+
+                        Kamu berhasil.
+
+                    </p>
+
+
+                    <p>
+
+                        Dan aku harap kamu memberikan
+                        sedikit waktu untuk dirimu
+                        sendiri hari ini.
+
+                        Tarik napas.
+
+                        Lihat kembali perjalananmu.
+
+                        Lalu katakan kepada dirimu:
+
+                        "Aku berhasil sampai di sini."
+
+                    </p>
+
+
+                    <p>
+
+                        Setelah ini mungkin semuanya
+                        akan terasa berbeda.
+
+                        Teman-teman mungkin berjalan
+                        ke arah masing-masing.
+
+                        Tempat yang selama ini familiar
+                        mungkin akan menjadi kenangan.
+
+                    </p>
+
+
+                    <p>
+
+                        Tapi perubahan bukan berarti
+                        akhir.
+
+                        Kadang perubahan hanyalah
+                        cara hidup membuka pintu
+                        menuju sesuatu yang baru.
+
+                    </p>
+
+
+                    <p>
+
+                        So go.
+
+                        Chase the things you love.
+
+                        Make mistakes.
+
+                        Learn new things.
+
+                        Meet new people.
+
+                        And most importantly...
+
+                        don't forget to enjoy the
+                        little moments along the way.
+
+                    </p>
+
+
+                    <p>
+
+                        Congratulations.
+
+                        You deserve to be proud
+                        of yourself today.
+
+                    </p>
+
+
+                    <div class="signature">
+
+                        With lots of love,<br>
+
+                        Someone who believes in you ♡
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 8 — FUTURE
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page8"
+        >
+
+            <div class="page-content">
+
+                <div class="eyebrow">
+                    What's next?
+                </div>
+
+                <h2 class="future-title">
+
+                    Your Next Chapter
+                    <span>Awaits.</span>
+
+                </h2>
+
+                <p class="description">
+
+                    Kamu mungkin belum tahu persis
+                    seperti apa masa depanmu.
+
+                    Dan itu nggak apa-apa.
+
+                    Karena hidup bukan tentang
+                    mengetahui seluruh perjalanan
+                    sejak awal.
+
+                    Kadang kamu hanya perlu
+                    mengambil langkah pertama.
+
+                </p>
+
+
+                <div class="future-cards">
+
+
+                    <div class="future-card">
+
+                        <span>
+                            🌱
+                        </span>
+
+                        <p>
+                            Keep learning.
+                            Masih ada banyak hal
+                            yang belum kamu temukan.
+                        </p>
+
+                    </div>
+
+
+                    <div class="future-card">
+
+                        <span>
+                            ✨
+                        </span>
+
+                        <p>
+                            Keep dreaming.
+                            Jangan kecilkan mimpi
+                            hanya karena terasa jauh.
+                        </p>
+
+                    </div>
+
+
+                    <div class="future-card">
+
+                        <span>
+                            🤎
+                        </span>
+
+                        <p>
+                            Keep being you.
+                            Jangan kehilangan dirimu
+                            di perjalanan.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 9 — ACHIEVEMENT
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page9"
+        >
+
+            <div class="page-content">
+
+                <div class="achievement-box">
+
+                    <div class="achievement-icon">
+                        🏆
+                    </div>
+
+                    <div class="eyebrow"
+                         style="color:#ead9c8;">
+                        This deserves a celebration
+                    </div>
+
+                    <h2>
+                        You Made It.
+                    </h2>
+
+                    <p>
+
+                        One chapter ends here.
+
+                        But your story is nowhere
+                        near finished.
+
+                        There are still dreams
+                        waiting to be chased,
+                        places waiting to be visited,
+                        and memories waiting
+                        to be created.
+
+                        So today...
+
+                        celebrate.
+
+                        You've earned it.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PAGE 10 — FINAL
+        ================================================== -->
+
+        <section
+            class="page"
+            id="page10"
+        >
+
+            <div class="page-content">
+
+                <div class="final-heart">
+                    ♡
+                </div>
+
+
+                <div class="eyebrow">
+                    Before you go...
+                </div>
+
+
+                <h2 class="final-title">
+
+                    The Best Is<br>
+
+                    <span>Yet To Come.</span>
+
+                </h2>
+
+
+                <p class="final-message">
+
+                    Congratulations once again.
+
+                    Semoga semua langkah setelah
+                    ini membawa kamu semakin dekat
+                    dengan kehidupan yang kamu
+                    impikan.
+
+                    Semoga kamu bertemu dengan
+                    orang-orang baik.
+
+                    Semoga kamu menemukan hal-hal
+                    yang membuatmu bahagia.
+
+                    Dan semoga suatu hari nanti,
+                    ketika kamu melihat kembali
+                    halaman ini...
+
+                    kamu bisa tersenyum dan berkata,
+
+                    <br><br>
+
+                    <strong>
+                        "Wow... ternyata aku sudah
+                        sejauh itu."
+                    </strong>
+
+                </p>
+
+
+                <div class="brand-end">
+
+                    A Little Something ✦
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <div id="navigation">
+
+        <button
+            class="nav-btn"
+            id="backButton"
+            onclick="previousPage()"
+        >
+            ←
+        </button>
+
+
+        <div id="pageIndicator">
+            1 / 10
+        </div>
+
+
+        <button
+            class="nav-btn"
+            id="nextButton"
+            onclick="nextPage()"
+        >
+            →
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MUSIC
+    ====================================================== -->
+
+    <button
+        id="musicButton"
+        onclick="toggleMusic()"
+        title="Music"
+    >
+        ♫
+    </button>
+
+
+    <audio
+        id="bgMusic"
+        loop
+    >
+
+        <!--
+            MASUKKAN MUSIK:
+
+            music/graduation.mp3
+        -->
+
+        <source
+            src="music/graduation.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           PAGES
+        ====================================================== */
+
+        const pages = [
+
+            document.getElementById("opening"),
+
+            document.getElementById("page1"),
+
+            document.getElementById("page2"),
+
+            document.getElementById("page3"),
+
+            document.getElementById("page4"),
+
+            document.getElementById("page5"),
+
+            document.getElementById("page6"),
+
+            document.getElementById("page7"),
+
+            document.getElementById("page8"),
+
+            document.getElementById("page9"),
+
+            document.getElementById("page10")
+
+        ];
+
+
+        let currentPage = 0;
+
+
+        const music =
+            document.getElementById(
+                "bgMusic"
+            );
+
+
+        const musicButton =
+            document.getElementById(
+                "musicButton"
+            );
+
+
+        const indicator =
+            document.getElementById(
+                "pageIndicator"
+            );
+
+
+        const backButton =
+            document.getElementById(
+                "backButton"
+            );
+
+
+        const nextButton =
+            document.getElementById(
+                "nextButton"
+            );
+
+
+        /* =====================================================
+           OPEN LETTER
+        ====================================================== */
+
+        function openLetter() {
+
+            const envelope =
+                document.getElementById(
+                    "envelope"
+                );
+
+
+            envelope.classList.add(
+                "open"
+            );
+
+
+            createConfetti();
+
+
+            setTimeout(() => {
+
+                goToPage(1);
+
+                startMusic();
+
+            }, 700);
+
+        }
+
+
+        /* =====================================================
+           GO TO PAGE
+        ====================================================== */
+
+        function goToPage(index) {
+
+            if (
+                index < 1 ||
+                index >= pages.length
+            ) {
+
+                return;
+
+            }
+
+
+            pages[currentPage]
+                .classList
+                .remove("active");
+
+
+            pages[currentPage]
+                .classList
+                .add("previous");
+
+
+            pages[index]
+                .classList
+                .remove("previous");
+
+
+            pages[index]
+                .classList
+                .add("active");
+
+
+            currentPage =
+                index;
+
+
+            updateNavigation();
+
+        }
+
+
+        /* =====================================================
+           NEXT PAGE
+        ====================================================== */
+
+        function nextPage() {
+
+            if (
+                currentPage <
+                pages.length - 1
+            ) {
+
+                goToPage(
+                    currentPage + 1
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           PREVIOUS PAGE
+        ====================================================== */
+
+        function previousPage() {
+
+            if (
+                currentPage > 1
+            ) {
+
+                pages[currentPage]
+                    .classList
+                    .remove("active");
+
+
+                pages[currentPage]
+                    .classList
+                    .remove("previous");
+
+
+                currentPage--;
+
+
+                pages[currentPage]
+                    .classList
+                    .remove("previous");
+
+
+                pages[currentPage]
+                    .classList
+                    .add("active");
+
+
+                updateNavigation();
+
+            }
+
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
+
+        function updateNavigation() {
+
+            indicator.textContent =
+                `${currentPage} / ${pages.length - 1}`;
+
+
+            if (
+                currentPage <= 1
+            ) {
+
+                backButton.style.visibility =
+                    "hidden";
+
+            } else {
+
+                backButton.style.visibility =
+                    "visible";
+
+            }
+
+
+            if (
+                currentPage >=
+                pages.length - 1
+            ) {
+
+                nextButton.style.visibility =
+                    "hidden";
+
+            } else {
+
+                nextButton.style.visibility =
+                    "visible";
+
+            }
+
+        }
+
+
+        /* =====================================================
+           MUSIC
+        ====================================================== */
+
+        function startMusic() {
+
+            music.play()
+                .then(() => {
+
+                    musicButton
+                        .classList
+                        .add("playing");
+
+                })
+                .catch(() => {
+
+                    console.log(
+                        "Browser menolak autoplay."
+                    );
+
+                });
+
+        }
+
+
+        function toggleMusic() {
+
+            if (
+                music.paused
+            ) {
+
+                music.play();
+
+                musicButton
+                    .classList
+                    .add("playing");
+
+            } else {
+
+                music.pause();
+
+                musicButton
+                    .classList
+                    .remove("playing");
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CONFETTI
+        ====================================================== */
+
+        function createConfetti() {
+
+            const symbols = [
+
+                "✦",
+                "✧",
+                "•",
+                "♡",
+                "✿"
+
+            ];
+
+
+            for (
+                let i = 0;
+                i < 65;
+                i++
+            ) {
+
+                const confetti =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                confetti
+                    .className =
+                    "confetti";
+
+
+                confetti.textContent =
+                    symbols[
+                        Math.floor(
+                            Math.random()
+                            *
+                            symbols.length
+                        )
+                    ];
+
+
+                confetti.style.left =
+                    Math.random() *
+                    100 +
+                    "%";
+
+
+                confetti.style.fontSize =
+                    Math.random() *
+                    10 +
+                    8 +
+                    "px";
+
+
+                confetti.style.animationDuration =
+                    Math.random() *
+                    2 +
+                    2 +
+                    "s";
+
+
+                confetti.style.animationDelay =
+                    Math.random() *
+                    .7 +
+                    "s";
+
+
+                document.body
+                    .appendChild(
+                        confetti
+                    );
+
+
+                setTimeout(() => {
+
+                    confetti.remove();
+
+                }, 4500);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           KEYBOARD
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key ===
+                    "ArrowRight"
+                ) {
+
+                    nextPage();
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowLeft"
+                ) {
+
+                    previousPage();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           INITIALIZE
+        ====================================================== */
+
+        updateNavigation();
+
+
+    </script>
+
+
+</body>
+
+</html>

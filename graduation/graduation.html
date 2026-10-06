@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A New Chapter 🎓</title>
+
+    <!-- GOOGLE FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+
+            --navy: #17243b;
+
+            --navy-dark: #0d1628;
+
+            --cream: #faf7ef;
+
+            --paper: #fffdf7;
+
+            --gold: #c9a24e;
+
+            --gold-light: #ead9a7;
+
+            --blue-soft: #e9eef7;
+
+            --text: #394052;
+
+            --brown: #756b5d;
+
+            --shadow:
+                0 20px 50px rgba(23, 36, 59, 0.12);
+
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: "DM Sans", sans-serif;
+
+            color: var(--text);
+
+            background:
+
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(201,162,78,0.10),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(23,36,59,0.08),
+                    transparent 25%
+                ),
+
+                var(--cream);
+
+            overflow-x: hidden;
+
+        }
+
+
+        button {
+
+            font-family: inherit;
+
+        }
+
+
+         /* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page {
+    min-height: 100svh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+}
+
+.page.active {
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Center semua card/wrapper */
+
+.opening-card,
+.birthday-card,
+.album-wrapper,
+.letter-wrapper,
+.surprise-card,
+.final-card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+        /* =========================================================
+           DECORATIONS
+        ========================================================= */
+
+        .star {
+
+            position: fixed;
+
+            color: var(--gold);
+
+            font-size: 28px;
+
+            opacity: 0.65;
+
+            animation: float 4s ease-in-out infinite;
+
+            pointer-events: none;
+
+        }
+
+
+        .star.one {
+
+            top: 10%;
+
+            left: 8%;
+
+        }
+
+
+        .star.two {
+
+            top: 20%;
+
+            right: 10%;
+
+            animation-delay: 1s;
+
+        }
+
+
+        .star.three {
+
+            bottom: 12%;
+
+            left: 15%;
+
+            animation-delay: 2s;
+
+        }
+
+
+        .star.four {
+
+            bottom: 20%;
+
+            right: 14%;
+
+            animation-delay: 3s;
+
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-10px)
+                    rotate(8deg);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           TYPOGRAPHY
+        ========================================================= */
+
+        .script {
+
+            font-family: "Patrick Hand", cursive;
+
+        }
+
+
+        .small-label {
+
+            font-size: 13px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            color: var(--brown);
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .title {
+
+            font-family: "Playfair Display", serif;
+
+            color: var(--navy);
+
+            font-size:
+                clamp(42px, 7vw, 76px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .subtitle {
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+
+        }
+
+
+        /* =========================================================
+           BUTTON
+        ========================================================= */
+
+        .main-btn {
+
+            border: none;
+
+            padding: 14px 28px;
+
+            border-radius: 999px;
+
+            background: var(--navy);
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+
+            box-shadow:
+                0 10px 25px
+                rgba(23,36,59,0.18);
+
+        }
+
+
+        .main-btn:hover {
+
+            transform: translateY(-3px);
+
+            background: var(--navy-dark);
+
+        }
+
+
+        .secondary-btn {
+
+            border: 2px solid var(--navy);
+
+            background: transparent;
+
+            color: var(--navy);
+
+            padding: 12px 24px;
+
+            border-radius: 999px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .secondary-btn:hover {
+
+            background: var(--navy);
+
+            color: white;
+
+        }
+
+
+        /* =========================================================
+           PAGE 1 — OPENING
+        ========================================================= */
+
+        .opening-card {
+
+            max-width: 680px;
+
+            padding: 55px 35px;
+
+            background:
+                rgba(255,253,247,0.9);
+
+            border: 1px solid
+                rgba(23,36,59,0.10);
+
+            border-radius: 30px;
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+        .graduation-icon {
+
+            font-size: 85px;
+
+            margin-bottom: 20px;
+
+            animation:
+                graduationFloat 3s
+                ease-in-out infinite;
+
+        }
+
+
+        @keyframes graduationFloat {
+
+            0%,
+            100% {
+
+                transform: translateY(0)
+                    rotate(-3deg);
+
+            }
+
+            50% {
+
+                transform: translateY(-10px)
+                    rotate(3deg);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           PAGE 2 — REVEAL
+        ========================================================= */
+
+        .graduation-card {
+
+            max-width: 760px;
+
+            padding: 55px 35px;
+
+            background: var(--paper);
+
+            border-radius: 30px;
+
+            box-shadow: var(--shadow);
+
+            border:
+                1px solid
+                rgba(23,36,59,0.10);
+
+        }
+
+
+        .congrats {
+
+            font-family:
+                "Playfair Display", serif;
+
+            color: var(--navy);
+
+            font-size:
+                clamp(42px, 8vw, 78px);
+
+            line-height: 1.05;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .graduate-name {
+
+            font-family:
+                "Patrick Hand", cursive;
+
+            color: var(--gold);
+
+            font-size:
+                clamp(45px, 8vw, 80px);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .cap {
+
+            display: inline-block;
+
+            font-size: 110px;
+
+            cursor: pointer;
+
+            margin: 20px 0;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .cap:hover {
+
+            transform:
+                scale(1.1)
+                rotate(-5deg);
+
+        }
+
+
+        .cap-message {
+
+            display: none;
+
+            font-family:
+                "Patrick Hand", cursive;
+
+            color: var(--navy);
+
+            font-size: 28px;
+
+            line-height: 1.5;
+
+            margin: 20px auto;
+
+        }
+
+
+        .cap-message.show {
+
+            display: block;
+
+            animation:
+                fadeUp 0.6s ease;
+
+        }
+
+
+        /* =========================================================
+           PAGE 3 — JOURNEY
+        ========================================================= */
+
+        .journey-wrapper {
+
+            width: 100%;
+
+            max-width: 800px;
+
+            margin: auto;
+
+        }
+
+
+        .journey-title {
+
+            font-family:
+                "Playfair Display", serif;
+
+            color: var(--navy);
+
+            font-size:
+                clamp(40px, 6vw, 60px);
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .journey-subtitle {
+
+            color: var(--brown);
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .timeline {
+
+            display: grid;
+
+            gap: 18px;
+
+        }
+
+
+        .timeline-card {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+
+            text-align: left;
+
+            background: var(--paper);
+
+            padding: 22px;
+
+            border-radius: 18px;
+
+            border-left:
+                5px solid var(--gold);
+
+            box-shadow:
+                0 10px 30px
+                rgba(23,36,59,0.07);
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .timeline-card:hover {
+
+            transform:
+                translateX(6px);
+
+        }
+
+
+        .timeline-number {
+
+            min-width: 55px;
+
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: var(--navy);
+
+            color: white;
+
+            display: grid;
+
+            place-items: center;
+
+            font-family:
+                "Playfair Display", serif;
+
+            font-size: 20px;
+
+        }
+
+
+        .timeline-content h3 {
+
+            font-family:
+                "Playfair Display", serif;
+
+            color: var(--navy);
+
+            margin-bottom: 5px;
+
+            font-size: 22px;
+
+        }
+
+
+        .timeline-content p {
+
+            line-height: 1.6;
+
+            color: var(--brown);
+
+        }
+
+
+        /* =========================================================
+           PAGE 4 — LETTER
+        ========================================================= */
+
+        .letter-wrapper {
+
+            width: 100%;
+
+            max-width: 720px;
+
+            margin: auto;
+
+        }
+
+
+        .letter-card {
+
+            position: relative;
+
+            background: var(--paper);
+
+            padding: 50px 45px;
+
+            text-align: left;
+
+            border-radius: 5px;
+
+            box-shadow: var(--shadow);
+
+            border:
+                1px solid
+                rgba(23,36,59,0.10);
+
+        }
+
+
+        .letter-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 12px;
+
+            border:
+                1px dashed
+                rgba(201,162,78,0.5);
+
+            pointer-events: none;
+
+        }
+
+
+        .letter-heading {
+
+            font-family:
+                "Patrick Hand", cursive;
+
+            color: var(--navy);
+
+            font-size: 30px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .letter-text {
+
+            font-family:
+                "Patrick Hand", cursive;
+
+            font-size: 24px;
+
+            line-height: 1.8;
+
+            min-height: 250px;
+
+            white-space: pre-line;
+
+        }
+
+
+        .letter-signature {
+
+            margin-top: 30px;
+
+            font-family:
+                "Patrick Hand", cursive;
+
+            color: var(--navy);
+
+            font-size: 28px;
+
+            text-align: right;
+
+        }
+
+
+        /* =========================================================
+           PAGE 5 — FUTURE
+        ========================================================= */
+
+        .future-card {
+
+            max-width: 750px;
+
+            padding: 50px 30px;
+
+            background: var(--paper);
+
+            border-radius: 30px;
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+        .future-title {
+
+            font-family:
+                "Playfair Display", serif;
+
+            color: var(--navy);
+
+            font-size:
+                clamp(40px, 6vw, 58px);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .future-options {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin: 35px 0;
+
+        }
+
+
+        .future-option {
+
+            padding: 25px 15px;
+
+            background: var(--blue-soft);
+
+            border-radius: 18px;
+
+            border: 2px solid transparent;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+
+        }
+
+
+        .future-option:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                var(--gold);
+
+        }
+
+
+        .future-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .future-option h3 {
+
+            color: var(--navy);
+
+            font-family:
+                "Playfair Display", serif;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .future-option p {
+
+            font-size: 14px;
+
+            color: var(--brown);
+
+            line-height: 1.5;
+
+        }
+
+
+        .future-message {
+
+            display: none;
+
+            font-family:
+                "Patrick Hand", cursive;
+
+            color: var(--navy);
+
+            font-size: 28px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .future-message.show {
+
+            display: block;
+
+            animation:
+                fadeUp 0.6s ease;
+
+        }
+
+
+        /* =========================================================
+           PAGE 6 — FINAL
+        ========================================================= */
+
+        .final-card {
+
+            max-width: 750px;
+
+            padding: 50px 30px;
+
+        }
+
+
+        .final-icon {
+
+            font-size: 85px;
+
+            margin-bottom: 20px;
+
+            animation:
+                float 3s infinite;
+
+        }
+
+
+        .final-title {
+
+            font-family:
+                "Playfair Display", serif;
+
+            color: var(--navy);
+
+            font-size:
+                clamp(42px, 7vw, 70px);
+
+            line-height: 1.1;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .final-name {
+
+            font-family:
+                "Patrick Hand", cursive;
+
+            color: var(--gold);
+
+            font-size:
+                clamp(45px, 8vw, 75px);
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .final-message {
+
+            max-width: 600px;
+
+            margin: 0 auto 30px;
+
+            line-height: 1.8;
+
+            font-size: 18px;
+
+        }
+
+
+        /* =========================================================
+           MUSIC
+        ========================================================= */
+
+        .music-btn {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: var(--navy);
+
+            color: white;
+
+            cursor: pointer;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,0.15);
+
+        }
+
+
+        /* =========================================================
+           ANIMATION
+        ========================================================= */
+
+        @keyframes fadeUp {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        .fade-in {
+
+            animation:
+                fadeUp 0.8s ease;
+
+        }
+
+
+        /* =========================================================
+           CONFETTI
+        ========================================================= */
+
+        .confetti {
+
+            position: fixed;
+
+            width: 8px;
+
+            height: 14px;
+
+            top: -20px;
+
+            z-index: 9999;
+
+            pointer-events: none;
+
+            animation:
+                fall 3s linear forwards;
+
+        }
+
+
+        @keyframes fall {
+
+            to {
+
+                transform:
+                    translateY(110vh)
+                    rotate(720deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            .page {
+
+                min-height: 100svh;
+
+                padding:
+                    25px 15px;
+
+            }
+
+
+            .opening-card,
+            .graduation-card,
+            .future-card {
+
+                width: 100%;
+
+                padding:
+                    40px 20px;
+
+            }
+
+
+            .graduation-icon {
+
+                font-size: 65px;
+
+            }
+
+
+            .cap {
+
+                font-size: 80px;
+
+            }
+
+
+            .subtitle {
+
+                font-size: 16px;
+
+            }
+
+
+            .timeline-card {
+
+                gap: 14px;
+
+                padding: 18px;
+
+            }
+
+
+            .timeline-number {
+
+                min-width: 45px;
+
+                height: 45px;
+
+                font-size: 17px;
+
+            }
+
+
+            .timeline-content h3 {
+
+                font-size: 19px;
+
+            }
+
+
+            .timeline-content p {
+
+                font-size: 14px;
+
+            }
+
+
+            .letter-card {
+
+                padding:
+                    40px 25px;
+
+            }
+
+
+            .letter-text {
+
+                font-size: 21px;
+
+                line-height: 1.7;
+
+            }
+
+
+            .future-options {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .future-option {
+
+                display: flex;
+
+                align-items: center;
+
+                gap: 15px;
+
+                text-align: left;
+
+            }
+
+
+            .future-icon {
+
+                font-size: 35px;
+
+                margin: 0;
+
+            }
+
+
+            .star {
+
+                font-size: 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         DECORATIONS
+    ========================================================== -->
+
+    <div class="star one">✦</div>
+
+    <div class="star two">★</div>
+
+    <div class="star three">✧</div>
+
+    <div class="star four">✦</div>
+
+
+
+    <!-- =========================================================
+         PAGE 1 — OPENING
+    ========================================================== -->
+
+    <section class="page active" id="pageOpening">
+
+        <div class="container">
+
+            <div class="opening-card fade-in">
+
+                <div class="graduation-icon">
+                    🎓
+                </div>
+
+
+                <div class="small-label">
+                    one chapter ends
+                </div>
+
+
+                <h1 class="title">
+
+                    Something
+                    <br>
+
+                    <span class="script">
+                        worth celebrating...
+                    </span>
+
+                </h1>
+
+
+                <p class="subtitle">
+
+                    After all the late nights,
+                    difficult days, little victories,
+                    and countless memories...
+
+                    <br><br>
+
+                    You made it.
+
+                </p>
+
+
+                <button
+                    class="main-btn"
+                    id="openBtn"
+                >
+
+                    OPEN YOUR GRADUATION
+                    🎓
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PAGE 2 — GRADUATION REVEAL
+    ========================================================== -->
+
+    <section
+        class="page"
+        id="pageGraduation"
+    >
+
+        <div class="container">
+
+            <div class="graduation-card fade-in">
+
+                <div class="small-label">
+                    you did it
+                </div>
+
+
+                <h1 class="congrats">
+
+                    Congratulations!
+
+                </h1>
+
+
+                <!-- CHANGE NAME -->
+
+                <div class="graduate-name">
+
+                    YOUR NAME
+
+                </div>
+
+
+                <div
+                    class="cap"
+                    id="cap"
+                    title="Click the graduation cap!"
+                >
+
+                    🎓
+
+                </div>
+
+
+                <div
+                    class="cap-message"
+                    id="capMessage"
+                >
+
+                    You actually made it. ✨
+
+                    <br>
+
+                    And you should be proud
+                    of how far you've come.
+
+                </div>
+
+
+                <br>
+
+
+                <button
+                    class="secondary-btn"
+                    id="toJourney"
+                >
+
+                    Look back → 
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PAGE 3 — JOURNEY
+    ========================================================== -->
+
+    <section
+        class="page"
+        id="pageJourney"
+    >
+
+        <div class="container">
+
+            <div class="journey-wrapper">
+
+                <div class="small-label">
+                    looking back
+                </div>
+
+
+                <h1 class="journey-title">
+
+                    The Journey
+
+                </h1>
+
+
+                <p class="journey-subtitle">
+
+                    It wasn't always easy.
+                    But every step brought you here.
+
+                </p>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-card">
+
+                        <div class="timeline-number">
+                            01
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                The Beginning
+                            </h3>
+
+                            <p>
+                                Everything started
+                                with a first step.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="timeline-card">
+
+                        <div class="timeline-number">
+                            02
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                The Struggle
+                            </h3>
+
+                            <p>
+                                There were difficult
+                                days, but you kept going.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="timeline-card">
+
+                        <div class="timeline-number">
+                            03
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                The Memories
+                            </h3>
+
+                            <p>
+                                Friends, laughter,
+                                mistakes, and moments
+                                worth remembering.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="timeline-card">
+
+                        <div class="timeline-number">
+                            04
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+                                We Made It
+                            </h3>
+
+                            <p>
+                                Somehow, through it all,
+                                you reached the finish line.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <br><br>
+
+
+                <button
+                    class="main-btn"
+                    id="toLetter"
+                >
+
+                    A Letter For You 💌
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PAGE 4 — LETTER
+    ========================================================== -->
+
+    <section
+        class="page"
+        id="pageLetter"
+    >
+
+        <div class="container">
+
+            <div class="letter-wrapper">
+
+                <div class="small-label">
+                    something from me
+                </div>
+
+
+                <h1 class="journey-title">
+
+                    A Little Letter
+
+                </h1>
+
+
+                <br>
+
+
+                <div class="letter-card">
+
+                    <div
+                        class="letter-heading"
+                        id="letterHeading"
+                    >
+
+                        Dear YOUR NAME,
+
+                    </div>
+
+
+                    <div
+                        class="letter-text"
+                        id="letterText"
+                    ></div>
+
+
+                    <div
+                        class="letter-signature"
+                        id="letterSignature"
+                    >
+
+                        — YOUR NAME ♡
+
+                    </div>
+
+                </div>
+
+
+                <br><br>
+
+
+                <button
+                    class="main-btn"
+                    id="toFuture"
+                >
+
+                    What's Next? → 
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PAGE 5 — FUTURE
+    ========================================================== -->
+
+    <section
+        class="page"
+        id="pageFuture"
+    >
+
+        <div class="container">
+
+            <div class="future-card">
+
+                <div class="small-label">
+                    the next chapter
+                </div>
+
+
+                <h1 class="future-title">
+
+                    What's Next?
+
+                </h1>
+
+
+                <p class="subtitle">
+
+                    Graduation isn't the end.
+
+                    <br>
+
+                    It's the beginning of something new.
+
+                </p>
+
+
+                <div class="future-options">
+
+
+                    <div
+                        class="future-option"
+                        data-message="Whatever you choose to study, I hope you find something that makes you excited to wake up every morning. 🎓"
+                    >
+
+                        <div class="future-icon">
+                            🎓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                College
+                            </h3>
+
+                            <p>
+                                A new place to learn.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="future-option"
+                        data-message="May you find work that lets you grow, create, and become the person you want to be. 💼"
+                    >
+
+                        <div class="future-icon">
+                            💼
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Career
+                            </h3>
+
+                            <p>
+                                Time to build your future.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="future-option"
+                        data-message="Whatever adventure comes next, don't be afraid to take the first step. The world is waiting. 🌎"
+                    >
+
+                        <div class="future-icon">
+                            🌎
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                New Adventure
+                            </h3>
+
+                            <p>
+                                Something unexpected.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div
+                    class="future-message"
+                    id="futureMessage"
+                ></div>
+
+
+                <br>
+
+
+                <button
+                    class="main-btn"
+                    id="toFinal"
+                >
+
+                    One Last Thing ✨
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PAGE 6 — FINAL
+    ========================================================== -->
+
+    <section
+        class="page"
+        id="pageFinal"
+    >
+
+        <div class="container">
+
+            <div class="final-card fade-in">
+
+                <div class="final-icon">
+                    🎓
+                </div>
+
+
+                <div class="small-label">
+                    that's all
+                </div>
+
+
+                <h1 class="final-title">
+
+                    One Chapter Ends.
+
+                    <br>
+
+                    <span class="script">
+                        Another Begins.
+                    </span>
+
+                </h1>
+
+
+                <div
+                    class="final-name"
+                    id="finalName"
+                >
+
+                    YOUR NAME
+
+                </div>
+
+
+                <p class="final-message">
+
+                    Congratulations on reaching
+                    this milestone.
+
+                    <br><br>
+
+                    Take a moment to be proud
+                    of yourself.
+
+                    <br><br>
+
+                    You don't have to know
+                    exactly where the road leads.
+
+                    Just keep walking.
+
+                    <br><br>
+
+                    The best chapters
+                    might still be ahead.
+
+                    <br><br>
+
+                    <strong>
+                        Congratulations, graduate. 🎓
+                    </strong>
+
+                </p>
+
+
+                <button
+                    class="main-btn"
+                    id="finalBtn"
+                >
+
+                    CELEBRATE! 🎉
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         MUSIC
+    ========================================================== -->
+
+    <button
+        class="music-btn"
+        id="musicBtn"
+        title="Music"
+    >
+
+        ♫
+
+    </button>
+
+
+    <audio
+        id="backgroundMusic"
+        loop
+    >
+
+        <!--
+            Tambahkan musik:
+
+            <source
+                src="music.mp3"
+                type="audio/mpeg"
+            >
+        -->
+
+    </audio>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+
+        /* =========================================================
+           PERSONALIZATION
+        ========================================================= */
+
+        const recipientName =
+            "YOUR NAME";
+
+        const senderName =
+            "YOUR NAME";
+
+
+        const letterContent =
+`Congratulations!
+
+You actually made it.
+
+After all the assignments,
+the stressful days,
+the deadlines,
+the laughter,
+and all those little moments...
+
+here you are.
+
+Standing at the end of one chapter
+and the beginning of another.
+
+I hope you never forget
+how much you've grown.
+
+You don't have to have
+everything figured out yet.
+
+Take your time.
+
+Make mistakes.
+
+Try new things.
+
+And most importantly,
+keep becoming the person
+you want to be.
+
+I'm proud of you.
+
+Congratulations on your graduation. ♡`;
+
+
+        /* =========================================================
+           PAGE SYSTEM
+        ========================================================= */
+
+        const pages = {
+
+            opening:
+                document.getElementById(
+                    "pageOpening"
+                ),
+
+            graduation:
+                document.getElementById(
+                    "pageGraduation"
+                ),
+
+            journey:
+                document.getElementById(
+                    "pageJourney"
+                ),
+
+            letter:
+                document.getElementById(
+                    "pageLetter"
+                ),
+
+            future:
+                document.getElementById(
+                    "pageFuture"
+                ),
+
+            final:
+                document.getElementById(
+                    "pageFinal"
+                )
+
+        };
+
+
+        function showPage(page) {
+
+            Object.values(pages).forEach(
+                currentPage => {
+
+                    currentPage.classList.remove(
+                        "active"
+                    );
+
+                }
+            );
+
+
+            pages[page].classList.add(
+                "active"
+            );
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+        /* =========================================================
+           PERSONALIZATION
+        ========================================================= */
+
+        document.querySelector(
+            ".graduate-name"
+        ).textContent =
+            recipientName;
+
+
+        document.querySelector(
+            ".final-name"
+        ).textContent =
+            recipientName;
+
+
+        document.querySelector(
+            ".letter-heading"
+        ).textContent =
+            "Dear " +
+            recipientName +
+            ",";
+
+
+        document.querySelector(
+            ".letter-signature"
+        ).textContent =
+            "— " +
+            senderName +
+            " ♡";
+
+
+        /* =========================================================
+           OPEN
+        ========================================================= */
+
+        document.getElementById(
+            "openBtn"
+        ).addEventListener(
+            "click",
+            function () {
+
+                showPage(
+                    "graduation"
+                );
+
+                createConfetti(45);
+
+            }
+        );
+
+
+        /* =========================================================
+           GRADUATION CAP
+        ========================================================= */
+
+        const cap =
+            document.getElementById(
+                "cap"
+            );
+
+        const capMessage =
+            document.getElementById(
+                "capMessage"
+            );
+
+
+        cap.addEventListener(
+            "click",
+            function () {
+
+                cap.textContent =
+                    "🎉";
+
+                capMessage.classList.add(
+                    "show"
+                );
+
+                createConfetti(50);
+
+            }
+        );
+
+
+        document.getElementById(
+            "toJourney"
+        ).addEventListener(
+            "click",
+            function () {
+
+                showPage(
+                    "journey"
+                );
+
+            }
+        );
+
+
+        /* =========================================================
+           JOURNEY
+        ========================================================= */
+
+        document.getElementById(
+            "toLetter"
+        ).addEventListener(
+            "click",
+            function () {
+
+                showPage(
+                    "letter"
+                );
+
+                startLetter();
+
+            }
+        );
+
+
+        /* =========================================================
+           LETTER TYPEWRITER
+        ========================================================= */
+
+        let letterStarted =
+            false;
+
+
+        function startLetter() {
+
+            if (letterStarted)
+                return;
+
+
+            letterStarted = true;
+
+
+            const textElement =
+                document.getElementById(
+                    "letterText"
+                );
+
+
+            let index = 0;
+
+
+            function typeCharacter() {
+
+                if (
+                    index <
+                    letterContent.length
+                ) {
+
+                    textElement.textContent +=
+                        letterContent.charAt(
+                            index
+                        );
+
+                    index++;
+
+
+                    setTimeout(
+                        typeCharacter,
+                        25
+                    );
+
+                }
+
+            }
+
+
+            typeCharacter();
+
+        }
+
+
+        /* =========================================================
+           FUTURE OPTIONS
+        ========================================================= */
+
+        const futureOptions =
+            document.querySelectorAll(
+                ".future-option"
+            );
+
+
+        const futureMessage =
+            document.getElementById(
+                "futureMessage"
+            );
+
+
+        futureOptions.forEach(
+            option => {
+
+                option.addEventListener(
+                    "click",
+                    function () {
+
+                        futureMessage.textContent =
+                            this.dataset.message;
+
+
+                        futureMessage.classList.add(
+                            "show"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        document.getElementById(
+            "toFuture"
+        ).addEventListener(
+            "click",
+            function () {
+
+                showPage(
+                    "future"
+                );
+
+            }
+        );
+
+
+        document.getElementById(
+            "toFinal"
+        ).addEventListener(
+            "click",
+            function () {
+
+                showPage(
+                    "final"
+                );
+
+            }
+        );
+
+
+        /* =========================================================
+           FINAL
+        ========================================================= */
+
+        document.getElementById(
+            "finalBtn"
+        ).addEventListener(
+            "click",
+            function () {
+
+                createConfetti(100);
+
+
+                this.textContent =
+                    "CONGRATULATIONS! 🎓✨";
+
+            }
+        );
+
+
+        /* =========================================================
+           CONFETTI
+        ========================================================= */
+
+        function createConfetti(
+            amount = 35
+        ) {
+
+            for (
+                let i = 0;
+                i < amount;
+                i++
+            ) {
+
+                const confetti =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                confetti.classList.add(
+                    "confetti"
+                );
+
+
+                confetti.style.left =
+                    Math.random() * 100 +
+                    "vw";
+
+
+                confetti.style.background =
+                    randomConfettiColor();
+
+
+                confetti.style.animationDelay =
+                    Math.random() * 0.5 +
+                    "s";
+
+
+                document.body.appendChild(
+                    confetti
+                );
+
+
+                setTimeout(
+                    function () {
+
+                        confetti.remove();
+
+                    },
+                    3500
+                );
+
+            }
+
+        }
+
+
+        function randomConfettiColor() {
+
+            const colors = [
+
+                "#17243b",
+
+                "#c9a24e",
+
+                "#ead9a7",
+
+                "#e9eef7",
+
+                "#ffffff"
+
+            ];
+
+
+            return colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+        }
+
+
+        /* =========================================================
+           MUSIC
+        ========================================================= */
+
+        const music =
+            document.getElementById(
+                "backgroundMusic"
+            );
+
+
+        const musicBtn =
+            document.getElementById(
+                "musicBtn"
+            );
+
+
+        let musicPlaying =
+            false;
+
+
+        musicBtn.addEventListener(
+            "click",
+            function () {
+
+                if (!music.src) {
+
+                    alert(
+                        "Tambahkan file musik terlebih dahulu 🎵"
+                    );
+
+                    return;
+
+                }
+
+
+                if (musicPlaying) {
+
+                    music.pause();
+
+                    musicBtn.textContent =
+                        "♫";
+
+                    musicPlaying =
+                        false;
+
+                } else {
+
+                    music.play();
+
+                    musicBtn.textContent =
+                        "🔊";
+
+                    musicPlaying =
+                        true;
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

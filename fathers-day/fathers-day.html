@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>A Little Something For Dad ✦</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Patrick+Hand&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ===================================================== */
+
+        :root {
+
+            --primary: #315b82;
+            --primary-dark: #21415f;
+
+            --cream: #f5f8fb;
+            --paper: #ffffff;
+
+            --soft: #dbe9f4;
+            --soft-2: #e9f1f7;
+
+            --text: #263746;
+            --muted: #687987;
+
+            --accent: #9db8cf;
+
+            --shadow:
+                0 20px 60px rgba(35, 65, 90, 0.12);
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: "DM Sans", sans-serif;
+
+            background: var(--cream);
+
+            color: var(--text);
+
+            overflow-x: hidden;
+
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 22px 6%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            z-index: 1000;
+
+            background:
+                rgba(245, 248, 251, 0.78);
+
+            backdrop-filter: blur(12px);
+
+        }
+
+
+        .logo {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 20px;
+
+            color: var(--primary);
+
+        }
+
+
+        .nav-tag {
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: var(--muted);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            padding:
+                130px 7% 80px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+            position: relative;
+
+        }
+
+
+        .hero-text {
+
+            max-width: 600px;
+
+        }
+
+
+        .eyebrow {
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            font-size: 12px;
+
+            color: var(--primary);
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero h1 {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(55px, 7vw, 95px);
+
+            line-height: 0.98;
+
+            color: var(--primary);
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .hero h1 em {
+
+            color: var(--text);
+
+            font-weight: 500;
+
+        }
+
+
+        .hero-description {
+
+            max-width: 520px;
+
+            line-height: 1.8;
+
+            color: var(--muted);
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .hero-btn {
+
+            border: none;
+
+            background: var(--primary);
+
+            color: white;
+
+            padding: 15px 28px;
+
+            border-radius: 999px;
+
+            cursor: pointer;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 10px 25px
+                rgba(49, 91, 130, 0.25);
+
+        }
+
+
+        .hero-btn:hover {
+
+            transform:
+                translateY(-4px);
+
+            background:
+                var(--primary-dark);
+
+        }
+
+
+        /* =====================================================
+           HERO IMAGE
+        ===================================================== */
+
+        .hero-image {
+
+            position: relative;
+
+            max-width: 600px;
+
+            margin: auto;
+
+        }
+
+
+        .hero-image img {
+
+            width: 100%;
+
+            aspect-ratio: 4 / 5;
+
+            object-fit: cover;
+
+            border-radius: 4px;
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+        .image-label {
+
+            position: absolute;
+
+            bottom: 25px;
+
+            left: -25px;
+
+            background: var(--paper);
+
+            padding: 18px 25px;
+
+            box-shadow: var(--shadow);
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size: 20px;
+
+            transform:
+                rotate(-3deg);
+
+        }
+
+
+        /* =====================================================
+           DECORATIONS
+        ===================================================== */
+
+        .star {
+
+            position: absolute;
+
+            color: var(--primary);
+
+            opacity: 0.2;
+
+            font-size: 65px;
+
+            pointer-events: none;
+
+        }
+
+
+        .star.one {
+
+            top: 135px;
+            right: 5%;
+
+        }
+
+
+        .star.two {
+
+            bottom: 70px;
+            left: 4%;
+
+        }
+
+
+        .star.three {
+
+            top: 42%;
+            right: 46%;
+
+            font-size: 25px;
+
+            opacity: 0.12;
+
+        }
+
+
+        /* =====================================================
+           SECTION
+        ===================================================== */
+
+        section {
+
+            padding:
+                110px 7%;
+
+        }
+
+
+        .section-header {
+
+            max-width: 700px;
+
+            margin:
+                0 auto 60px;
+
+            text-align: center;
+
+        }
+
+
+        .section-label {
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 12px;
+
+            color: var(--primary);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .section-title {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(40px, 5vw, 65px);
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .section-description {
+
+            color: var(--muted);
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           LESSON CARDS
+        ===================================================== */
+
+        .lessons {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+        }
+
+
+        .lesson {
+
+            background: var(--paper);
+
+            padding: 35px 30px;
+
+            min-height: 260px;
+
+            border: 1px solid
+                rgba(49, 91, 130, 0.12);
+
+            transition: 0.3s;
+
+        }
+
+
+        .lesson:hover {
+
+            transform:
+                translateY(-8px);
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+        .lesson-number {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 45px;
+
+            color: var(--soft);
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .lesson h3 {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size: 26px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .lesson p {
+
+            color: var(--muted);
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           MEMORY COLLAGE
+        ===================================================== */
+
+        .memories {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 0.8fr 0.8fr;
+
+            grid-template-rows:
+                250px 250px;
+
+            gap: 15px;
+
+        }
+
+
+        .memory {
+
+            overflow: hidden;
+
+            position: relative;
+
+            background: var(--soft);
+
+        }
+
+
+        .memory:first-child {
+
+            grid-row:
+                span 2;
+
+        }
+
+
+        .memory img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+
+        }
+
+
+        .memory:hover img {
+
+            transform:
+                scale(1.06);
+
+        }
+
+
+        .memory-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 25px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(12, 35, 55, 0.65)
+                );
+
+            color: white;
+
+            opacity: 0;
+
+            transition: 0.3s;
+
+        }
+
+
+        .memory:hover
+        .memory-overlay {
+
+            opacity: 1;
+
+        }
+
+
+        /* =====================================================
+           INTERACTIVE MESSAGE
+        ===================================================== */
+
+        .message-section {
+
+            background:
+                var(--soft-2);
+
+            text-align: center;
+
+        }
+
+
+        .message-box {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            background: var(--paper);
+
+            padding:
+                60px 45px;
+
+            box-shadow: var(--shadow);
+
+            position: relative;
+
+        }
+
+
+        .message-box::before {
+
+            content: "✦";
+
+            position: absolute;
+
+            top: 20px;
+            right: 30px;
+
+            font-size: 32px;
+
+            color: var(--primary);
+
+        }
+
+
+        .message-text {
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size:
+                clamp(25px, 4vw, 38px);
+
+            line-height: 1.6;
+
+            color: var(--primary);
+
+            min-height: 120px;
+
+            transition: opacity 0.2s;
+
+        }
+
+
+        .message-btn {
+
+            margin-top: 30px;
+
+            padding:
+                12px 25px;
+
+            border-radius: 999px;
+
+            border:
+                1px solid var(--primary);
+
+            background: transparent;
+
+            color: var(--primary);
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .message-btn:hover {
+
+            background: var(--primary);
+
+            color: white;
+
+        }
+
+
+        /* =====================================================
+           LETTER
+        ===================================================== */
+
+        .letter {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            background: var(--paper);
+
+            padding:
+                65px 70px;
+
+            box-shadow: var(--shadow);
+
+            position: relative;
+
+        }
+
+
+        .letter::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 15px;
+
+            border:
+                1px dashed
+                rgba(49, 91, 130, 0.25);
+
+            pointer-events: none;
+
+        }
+
+
+        .letter-heading {
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size: 32px;
+
+            color: var(--primary);
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .letter-content {
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size: 23px;
+
+            line-height: 1.8;
+
+            white-space: pre-line;
+
+        }
+
+
+        .signature {
+
+            margin-top: 35px;
+
+            text-align: right;
+
+            font-family:
+                "Patrick Hand",
+                cursive;
+
+            font-size: 27px;
+
+            color: var(--primary);
+
+        }
+
+
+        /* =====================================================
+           FINAL
+        ===================================================== */
+
+        .final {
+
+            min-height: 80vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                var(--primary);
+
+            color: white;
+
+        }
+
+
+        .final-inner {
+
+            max-width: 800px;
+
+        }
+
+
+        .final-symbol {
+
+            font-size: 65px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .final h2 {
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+            font-size:
+                clamp(50px, 7vw, 85px);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .final p {
+
+            line-height: 1.8;
+
+            max-width: 600px;
+
+            margin: auto;
+
+            opacity: 0.9;
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            padding: 30px;
+
+            text-align: center;
+
+            background: var(--paper);
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+
+        /* =====================================================
+           FADE ANIMATION
+        ===================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(30px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+
+        }
+
+
+        .reveal.show {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .hero {
+
+                grid-template-columns: 1fr;
+
+                padding-top: 120px;
+
+                text-align: center;
+
+            }
+
+
+            .hero-text {
+
+                margin: auto;
+
+            }
+
+
+            .hero-description {
+
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+
+            .hero-image {
+
+                width: 90%;
+
+            }
+
+
+            .image-label {
+
+                left: 0;
+
+            }
+
+
+            .lessons {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .memories {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                grid-template-rows:
+                    250px 180px 180px;
+
+            }
+
+
+            .memory:first-child {
+
+                grid-column:
+                    span 2;
+
+                grid-row:
+                    auto;
+
+            }
+
+
+            .letter {
+
+                padding:
+                    45px 25px;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            nav {
+
+                padding:
+                    18px 20px;
+
+            }
+
+
+            .nav-tag {
+
+                display: none;
+
+            }
+
+
+            section {
+
+                padding:
+                    80px 20px;
+
+            }
+
+
+            .hero {
+
+                padding-left: 20px;
+                padding-right: 20px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 55px;
+
+            }
+
+
+            .hero-image {
+
+                width: 100%;
+
+            }
+
+
+            .memories {
+
+                grid-template-columns:
+                    1fr;
+
+                grid-template-rows:
+                    repeat(3, 230px);
+
+            }
+
+
+            .memory:first-child {
+
+                grid-column: auto;
+
+            }
+
+
+            .message-box {
+
+                padding:
+                    45px 25px;
+
+            }
+
+
+            .letter-content {
+
+                font-size: 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAV
+    ===================================================== -->
+
+    <nav>
+
+        <div class="logo">
+            A Little Something ✦
+        </div>
+
+        <div class="nav-tag">
+            Made with gratitude
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         DECORATIONS
+    ===================================================== -->
+
+    <div class="star one">
+        ✦
+    </div>
+
+    <div class="star two">
+        ✧
+    </div>
+
+    <div class="star three">
+        ✦
+    </div>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <div class="eyebrow">
+                Happy Father's Day
+            </div>
+
+            <h1>
+                For the man
+                <em>who taught me</em>
+                how to stand.
+            </h1>
+
+            <p class="hero-description">
+
+                This isn't just a greeting.
+
+                It's a little corner of the internet
+                made especially to say something
+                that I don't always know how to say.
+
+            </p>
+
+            <button
+                class="hero-btn"
+                onclick="scrollToSection('lessons')"
+            >
+                There's something I want to say →
+            </button>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <!-- GANTI DENGAN FOTO -->
+
+            <img
+                src="assets/dad-main.jpg"
+                alt="Our memory"
+                onerror="
+                    this.src='https://placehold.co/700x850/dbe9f4/315b82?text=Your+Photo'
+                "
+            >
+
+            <div class="image-label">
+                My quiet hero ✦
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LESSONS
+    ===================================================== -->
+
+    <section id="lessons">
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                Things I'll always remember
+            </div>
+
+            <h2 class="section-title">
+                Things You Taught Me
+            </h2>
+
+            <p class="section-description">
+
+                Some lessons aren't written in books.
+                They're learned from the people
+                who show us how to live.
+
+            </p>
+
+        </div>
+
+
+        <div class="lessons">
+
+            <div class="lesson reveal">
+
+                <div class="lesson-number">
+                    01
+                </div>
+
+                <h3>
+                    Stay Strong
+                </h3>
+
+                <p>
+                    You taught me that strength isn't
+                    about never falling down.
+                    It's about finding the courage
+                    to stand again.
+                </p>
+
+            </div>
+
+
+            <div class="lesson reveal">
+
+                <div class="lesson-number">
+                    02
+                </div>
+
+                <h3>
+                    Do Your Best
+                </h3>
+
+                <p>
+                    You taught me that I don't have
+                    to be perfect. I just have to
+                    keep learning and give my best.
+                </p>
+
+            </div>
+
+
+            <div class="lesson reveal">
+
+                <div class="lesson-number">
+                    03
+                </div>
+
+                <h3>
+                    Keep Moving
+                </h3>
+
+                <p>
+                    Whenever life gets difficult,
+                    you remind me that there is
+                    always another road ahead.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MEMORIES
+    ===================================================== -->
+
+    <section>
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                Little pieces of us
+            </div>
+
+            <h2 class="section-title">
+                A Few Memories
+            </h2>
+
+            <p class="section-description">
+                Ordinary moments that became special.
+            </p>
+
+        </div>
+
+
+        <div class="memories">
+
+            <div class="memory reveal">
+
+                <img
+                    src="assets/dad-1.jpg"
+                    alt="Memory"
+                    onerror="
+                        this.src='https://placehold.co/700x700/dbe9f4/315b82?text=Memory+01'
+                    "
+                >
+
+                <div class="memory-overlay">
+                    One of my favorite memories.
+                </div>
+
+            </div>
+
+
+            <div class="memory reveal">
+
+                <img
+                    src="assets/dad-2.jpg"
+                    alt="Memory"
+                    onerror="
+                        this.src='https://placehold.co/500x500/e9f1f7/315b82?text=Memory+02'
+                    "
+                >
+
+                <div class="memory-overlay">
+                    That one day.
+                </div>
+
+            </div>
+
+
+            <div class="memory reveal">
+
+                <img
+                    src="assets/dad-3.jpg"
+                    alt="Memory"
+                    onerror="
+                        this.src='https://placehold.co/500x500/dbe9f4/315b82?text=Memory+03'
+                    "
+                >
+
+                <div class="memory-overlay">
+                    A moment worth remembering.
+                </div>
+
+            </div>
+
+
+            <div class="memory reveal">
+
+                <img
+                    src="assets/dad-main.jpg"
+                    alt="Memory"
+                    onerror="
+                        this.src='https://placehold.co/500x500/e9f1f7/315b82?text=Memory+04'
+                    "
+                >
+
+                <div class="memory-overlay">
+                    More memories to come.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         RANDOM MESSAGE
+    ===================================================== -->
+
+    <section class="message-section">
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                Press the button
+            </div>
+
+            <h2 class="section-title">
+                A Little Reminder
+            </h2>
+
+        </div>
+
+
+        <div class="message-box reveal">
+
+            <div
+                class="message-text"
+                id="randomMessage"
+            >
+                Thank you for always being there.
+            </div>
+
+
+            <button
+                class="message-btn"
+                id="messageBtn"
+            >
+                Give me another one ✦
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LETTER
+    ===================================================== -->
+
+    <section>
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                From me to you
+            </div>
+
+            <h2 class="section-title">
+                A Little Letter
+            </h2>
+
+        </div>
+
+
+        <div class="letter reveal">
+
+            <div class="letter-heading">
+                Dear Dad,
+            </div>
+
+
+            <div class="letter-content">
+
+Happy Father's Day.
+
+I know I don't always say it,
+but I'm really grateful for you.
+
+Thank you for all the little things
+that sometimes go unnoticed.
+
+For the advice,
+the patience,
+the hard work,
+the reminders,
+the support,
+and all the moments
+you were there without asking
+for anything in return.
+
+Thank you for teaching me
+how to keep going,
+how to stand on my own,
+and how to face the world
+a little more bravely.
+
+I may not always know
+how to express it properly,
+
+but I hope you know
+that I appreciate you.
+
+Thank you for being
+someone I can always look up to.
+
+I love you. ✦
+
+            </div>
+
+
+            <div class="signature">
+                — Your child ✦
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FINAL
+    ===================================================== -->
+
+    <section class="final">
+
+        <div class="final-inner reveal">
+
+            <div class="final-symbol">
+                ✦
+            </div>
+
+            <h2>
+                Thank You,
+                Dad.
+            </h2>
+
+            <p>
+
+                For everything you've done,
+                everything you've taught me,
+                and everything you continue to be.
+
+                <br><br>
+
+                Happy Father's Day ✦
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        Made with ✦ for someone special.
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           SCROLL
+        ===================================================== */
+
+        function scrollToSection(id) {
+
+            document
+                .getElementById(id)
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+
+        /* =====================================================
+           RANDOM MESSAGES
+        ===================================================== */
+
+        const messages = [
+
+            "Thank you for always being there.",
+
+            "I may not say it often, but I appreciate you.",
+
+            "I'm lucky to have you as my dad.",
+
+            "Some of my favorite memories have you in them.",
+
+            "Thank you for believing in me.",
+
+            "Thank you for teaching me to keep going.",
+
+            "I hope I can make you proud.",
+
+            "You taught me more than you probably realize.",
+
+            "Thank you for being someone I can always look up to.",
+
+            "No matter how old I get, I'll always be your child.",
+
+            "Thank you for everything, Dad.",
+
+            "I love you more than words can explain. ✦"
+
+        ];
+
+
+        const messageElement =
+            document.getElementById(
+                "randomMessage"
+            );
+
+
+        const messageButton =
+            document.getElementById(
+                "messageBtn"
+            );
+
+
+        messageButton.addEventListener(
+            "click",
+            function () {
+
+                const randomIndex =
+                    Math.floor(
+                        Math.random()
+                        * messages.length
+                    );
+
+
+                messageElement.style.opacity =
+                    "0";
+
+
+                setTimeout(
+                    function () {
+
+                        messageElement.textContent =
+                            messages[randomIndex];
+
+                        messageElement.style.opacity =
+                            "1";
+
+                    },
+                    200
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const observer =
+            new IntersectionObserver(
+                function(entries) {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add("show");
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        revealElements.forEach(
+            element => {
+
+                observer.observe(
+                    element
+                );
+
+            }
+        );
+
+
+    </script>
+
+</body>
+
+</html>

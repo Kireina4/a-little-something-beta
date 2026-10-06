@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Something I Need To Tell You ♡</title>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        :root {
+            --cream: #f7f4ee;
+            --paper: #fffdf8;
+            --burgundy: #75151b;
+            --dark-burgundy: #4b1015;
+            --brown: #4c3935;
+            --rose: #c98d8d;
+            --gold: #b59a62;
+            --soft: #e9ddd5;
+        }
+
+
+        body {
+            background: var(--burgundy);
+            color: var(--brown);
+
+            font-family: "DM Sans", sans-serif;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        .book {
+            width: min(1100px, 92%);
+            margin: 40px auto;
+        }
+
+
+        .page {
+            display: none;
+
+            position: relative;
+
+            min-height: 700px;
+
+            background: var(--paper);
+
+            padding: 70px;
+
+            overflow: hidden;
+
+            animation: pageIn 0.7s ease;
+        }
+
+
+        .page.active {
+            display: flex;
+        }
+
+
+        @keyframes pageIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =========================================
+           DECORATIONS
+        ========================================= */
+
+        .star {
+            position: absolute;
+
+            font-size: 35px;
+
+            color: var(--burgundy);
+
+            opacity: 0.8;
+        }
+
+
+        .star.one {
+            top: 35px;
+            left: 40px;
+        }
+
+
+        .star.two {
+            bottom: 40px;
+            right: 45px;
+        }
+
+
+        .number {
+            position: absolute;
+
+            top: 35px;
+            right: 45px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 18px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================================
+           TYPOGRAPHY
+        ========================================= */
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Cormorant Garamond", serif;
+        }
+
+
+        .script {
+            font-family: "Playfair Display", serif;
+
+            font-style: italic;
+        }
+
+
+        .small-label {
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color: var(--burgundy);
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================
+           PAGE 1
+        ========================================= */
+
+        #page1 {
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        .intro {
+            max-width: 700px;
+        }
+
+
+        .intro h1 {
+            font-size: clamp(55px, 9vw, 110px);
+
+            line-height: 0.85;
+
+            color: var(--burgundy);
+
+            margin-bottom: 30px;
+        }
+
+
+        .intro p {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            line-height: 1.4;
+
+            margin-bottom: 45px;
+        }
+
+
+        .open-btn {
+            border: 1px solid var(--burgundy);
+
+            background: transparent;
+
+            color: var(--burgundy);
+
+            padding: 15px 40px;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            transition: 0.3s;
+        }
+
+
+        .open-btn:hover {
+            background: var(--burgundy);
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================
+           PAGE 2
+        ========================================= */
+
+        .memory-page {
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .memory-page h2 {
+            font-size: clamp(45px, 6vw, 80px);
+
+            color: var(--burgundy);
+
+            line-height: 0.9;
+
+            max-width: 700px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .memory-page p {
+            max-width: 600px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           PAGE 3
+        ========================================= */
+
+        .notice-page {
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        .notice-page h2 {
+            font-size: clamp(45px, 7vw, 85px);
+
+            color: var(--burgundy);
+
+            line-height: 1;
+
+            margin-bottom: 35px;
+        }
+
+
+        .notice-page p {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 26px;
+
+            max-width: 600px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           PAGE 4
+        ========================================= */
+
+        .gallery-page {
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .gallery-page h2 {
+            font-size: 60px;
+
+            color: var(--burgundy);
+
+            margin-bottom: 40px;
+        }
+
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .photo-card {
+            background: white;
+
+            padding: 10px;
+
+            border: 1px solid #ddd;
+
+            transform: rotate(-2deg);
+
+            transition: 0.4s;
+        }
+
+
+        .photo-card:nth-child(2) {
+            transform: rotate(2deg);
+        }
+
+
+        .photo-card:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+
+
+        .photo-card:hover {
+            transform: rotate(0) translateY(-8px);
+        }
+
+
+        .photo-card img {
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+
+            background: var(--soft);
+        }
+
+
+        .photo-card p {
+            font-family: "Cormorant Garamond", serif;
+
+            text-align: center;
+
+            font-size: 19px;
+
+            padding: 12px 5px 5px;
+        }
+
+
+        /* =========================================
+           PAGE 5
+        ========================================= */
+
+        .reveal-page {
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        .reveal-content {
+            max-width: 700px;
+        }
+
+
+        .reveal-content h2 {
+            font-size: clamp(45px, 7vw, 90px);
+
+            color: var(--burgundy);
+
+            margin-bottom: 35px;
+        }
+
+
+        .reveal-text {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 28px;
+
+            line-height: 1.6;
+
+            min-height: 180px;
+
+            transition: 0.5s;
+        }
+
+
+        .next-reveal {
+            margin-top: 30px;
+
+            border: none;
+
+            background: none;
+
+            color: var(--burgundy);
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           PAGE 6
+        ========================================= */
+
+        .songs-page {
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .songs-page h2 {
+            font-size: 65px;
+
+            color: var(--burgundy);
+
+            margin-bottom: 35px;
+        }
+
+
+        .songs {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .song {
+            border: 1px solid #d8cec7;
+
+            padding: 18px;
+
+            background: #fff;
+
+            transition: 0.3s;
+        }
+
+
+        .song:hover {
+            transform: translateY(-7px);
+        }
+
+
+        .album {
+            width: 100%;
+
+            aspect-ratio: 1;
+
+            background: var(--soft);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 30px;
+
+            color: var(--burgundy);
+
+            margin-bottom: 18px;
+        }
+
+
+        .song h3 {
+            color: var(--burgundy);
+
+            font-size: 25px;
+
+            margin-bottom: 7px;
+        }
+
+
+        .song p {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 18px;
+
+            line-height: 1.4;
+        }
+
+
+        /* =========================================
+           PAGE 7
+        ========================================= */
+
+        .confession-page {
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        .confession-page h2 {
+            font-size: clamp(70px, 12vw, 150px);
+
+            line-height: 0.8;
+
+            color: var(--burgundy);
+
+            margin-bottom: 50px;
+        }
+
+
+        .confession-page p {
+            max-width: 650px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           PAGE 8
+        ========================================= */
+
+        .question-page {
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        .question-page h2 {
+            font-size: clamp(50px, 7vw, 90px);
+
+            color: var(--burgundy);
+
+            margin-bottom: 50px;
+        }
+
+
+        .answers {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 15px;
+        }
+
+
+        .answer {
+            border: 1px solid var(--burgundy);
+
+            background: transparent;
+
+            color: var(--burgundy);
+
+            padding: 15px 25px;
+
+            cursor: pointer;
+
+            font-family: "DM Sans", sans-serif;
+
+            transition: 0.3s;
+        }
+
+
+        .answer:hover {
+            background: var(--burgundy);
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================
+           RESPONSE
+        ========================================= */
+
+        #response {
+            display: none;
+
+            margin-top: 50px;
+
+            max-width: 600px;
+        }
+
+
+        #response h3 {
+            color: var(--burgundy);
+
+            font-size: 50px;
+
+            margin-bottom: 20px;
+        }
+
+
+        #response p {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 24px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================
+           PAGE 9
+        ========================================= */
+
+        .ending-page {
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+        }
+
+
+        .ending-page h2 {
+            font-size: clamp(50px, 8vw, 100px);
+
+            color: var(--burgundy);
+
+            line-height: 0.9;
+
+            margin-bottom: 35px;
+        }
+
+
+        .ending-page p {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            line-height: 1.5;
+
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+
+        .signature {
+            margin-top: 50px;
+
+            font-family: "Playfair Display", serif;
+
+            font-style: italic;
+
+            font-size: 25px;
+
+            color: var(--burgundy);
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        .navigation {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-top: 15px;
+
+            color: white;
+        }
+
+
+        .nav-btn {
+            border: none;
+
+            background: none;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            opacity: 0.8;
+        }
+
+
+        .nav-btn:hover {
+            opacity: 1;
+        }
+
+
+        .page-counter {
+            font-size: 12px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .book {
+                width: 94%;
+
+                margin: 20px auto;
+            }
+
+
+            .page {
+                min-height: 650px;
+
+                padding: 45px 25px;
+            }
+
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+
+            .gallery .photo-card {
+                max-width: 260px;
+
+                width: 80%;
+
+                margin: auto;
+            }
+
+
+            .songs {
+                grid-template-columns: 1fr;
+            }
+
+
+            .song {
+                display: grid;
+
+                grid-template-columns: 110px 1fr;
+
+                gap: 15px;
+            }
+
+
+            .song .album {
+                grid-row: span 2;
+
+                margin: 0;
+            }
+
+
+            .songs-page h2,
+            .gallery-page h2 {
+                font-size: 48px;
+            }
+
+
+            .intro h1 {
+                font-size: 65px;
+            }
+
+
+            .intro p {
+                font-size: 22px;
+            }
+
+
+            .number {
+                top: 20px;
+
+                right: 20px;
+            }
+
+
+            .star.one {
+                top: 20px;
+
+                left: 20px;
+            }
+
+
+            .answers {
+                flex-direction: column;
+
+                width: 100%;
+            }
+
+
+            .answer {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<div class="book">
+
+
+    <!-- =========================================
+         PAGE 1
+    ========================================== -->
+
+    <section class="page active" id="page1">
+
+        <span class="star one">✦</span>
+
+        <div class="intro">
+
+            <div class="small-label">
+                a little something
+            </div>
+
+            <h1>
+                Something<br>
+                I Need To Tell You.
+            </h1>
+
+            <p>
+                There's something I've been meaning
+                to say for quite some time.
+            </p>
+
+            <button class="open-btn" onclick="nextPage()">
+                Open
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PAGE 2
+    ========================================== -->
+
+    <section class="page" id="page2">
+
+        <span class="number">02</span>
+
+        <div class="memory-page">
+
+            <div class="small-label">
+                chapter one
+            </div>
+
+            <h2>
+                It started<br>
+                with something simple.
+            </h2>
+
+            <p>
+                A conversation.<br>
+                A laugh.<br>
+                A random moment.
+                <br><br>
+
+                I didn't think much of it at first.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PAGE 3
+    ========================================== -->
+
+    <section class="page" id="page3">
+
+        <span class="number">03</span>
+
+        <div class="notice-page">
+
+            <div class="small-label">
+                chapter two
+            </div>
+
+            <h2>
+                Then I started<br>
+                noticing.
+            </h2>
+
+            <p>
+                I started looking forward
+                to talking to you.
+                <br><br>
+
+                I started remembering
+                the little things.
+                <br><br>
+
+                And somehow...
+                I started wondering
+                when we'd talk again.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PAGE 4
+    ========================================== -->
+
+    <section class="page" id="page4">
+
+        <span class="number">04</span>
+
+        <div class="gallery-page">
+
+            <div class="small-label">
+                little memories
+            </div>
+
+            <h2>
+                Things I Remember.
+            </h2>
+
+
+            <div class="gallery">
+
+
+                <div class="photo-card">
+
+                    <!-- GANTI FOTO DI SINI -->
+
+                    <img
+                        src="https://placehold.co/600x600/e9ddd5/75151b?text=Your+Photo"
+                        alt="Memory"
+                    >
+
+                    <p>
+                        that day.
+                    </p>
+
+                </div>
+
+
+                <div class="photo-card">
+
+                    <img
+                        src="https://placehold.co/600x600/e9ddd5/75151b?text=Your+Photo"
+                        alt="Memory"
+                    >
+
+                    <p>
+                        I still remember this.
+                    </p>
+
+                </div>
+
+
+                <div class="photo-card">
+
+                    <img
+                        src="https://placehold.co/600x600/e9ddd5/75151b?text=Your+Photo"
+                        alt="Memory"
+                    >
+
+                    <p>
+                        one of my favorites.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PAGE 5
+    ========================================== -->
+
+    <section class="page" id="page5">
+
+        <span class="number">05</span>
+
+        <div class="reveal-page reveal-content">
+
+            <div class="small-label">
+                the realization
+            </div>
+
+            <h2>
+                And then I realized...
+            </h2>
+
+            <div
+                class="reveal-text"
+                id="revealText"
+            >
+                You're someone
+                I genuinely care about.
+            </div>
+
+            <button
+                class="next-reveal"
+                onclick="revealNext()"
+            >
+                continue →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PAGE 6
+    ========================================== -->
+
+    <section class="page" id="page6">
+
+        <span class="number">06</span>
+
+        <div class="songs-page">
+
+            <div class="small-label">
+                soundtrack
+            </div>
+
+            <h2>
+                Songs That Remind Me Of You.
+            </h2>
+
+
+            <div class="songs">
+
+
+                <div class="song">
+
+                    <div class="album">
+                        ♫
+                    </div>
+
+                    <div>
+                        <h3>
+                            Song One
+                        </h3>
+
+                        <p>
+                            This song reminds me
+                            of you for some reason.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="song">
+
+                    <div class="album">
+                        ♫
+                    </div>
+
+                    <div>
+                        <h3>
+                            Song Two
+                        </h3>
+
+                        <p>
+                            Somehow this one
+                            always makes me think of you.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="song">
+
+                    <div class="album">
+                        ♫
+                    </div>
+
+                    <div>
+                        <h3>
+                            Song Three
+                        </h3>
+
+                        <p>
+                            Maybe you'll understand
+                            why I chose this one.
+                        </p>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PAGE 7
+    ========================================== -->
+
+    <section class="page" id="page7">
+
+        <span class="number">07</span>
+
+        <div class="confession-page">
+
+            <div class="small-label">
+                finally
+            </div>
+
+            <h2>
+                I LIKE YOU.
+            </h2>
+
+            <p>
+                I don't know where this will take us.
+                <br><br>
+
+                But I wanted you to know how I feel.
+                <br><br>
+
+                No pressure.
+                No expectations.
+                <br><br>
+
+                Just honesty.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PAGE 8
+    ========================================== -->
+
+    <section class="page" id="page8">
+
+        <span class="number">08</span>
+
+        <div class="question-page">
+
+            <div class="small-label">
+                your turn
+            </div>
+
+            <h2>
+                So... what do you think?
+            </h2>
+
+
+            <div class="answers">
+
+                <button
+                    class="answer"
+                    onclick="showResponse('same')"
+                >
+                    ♡ I feel the same
+                </button>
+
+
+                <button
+                    class="answer"
+                    onclick="showResponse('time')"
+                >
+                    ☁ I need some time
+                </button>
+
+
+                <button
+                    class="answer"
+                    onclick="showResponse('no')"
+                >
+                    🌷 I don't feel the same
+                </button>
+
+            </div>
+
+
+            <div id="response">
+
+                <h3 id="responseTitle">
+                </h3>
+
+                <p id="responseText">
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PAGE 9
+    ========================================== -->
+
+    <section class="page" id="page9">
+
+        <span class="star two">✦</span>
+
+        <div class="ending-page">
+
+            <div class="small-label">
+                the end
+            </div>
+
+            <h2>
+                Thank You<br>
+                For Reading.
+            </h2>
+
+            <p>
+                Whatever happens,
+                thank you for taking the time
+                to read this little confession.
+            </p>
+
+            <div class="signature">
+                — from someone who cares ♡
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <div class="navigation">
+
+        <button
+            class="nav-btn"
+            onclick="prevPage()"
+        >
+            ← back
+        </button>
+
+
+        <div
+            class="page-counter"
+            id="pageCounter"
+        >
+            01 / 09
+        </div>
+
+
+        <button
+            class="nav-btn"
+            onclick="nextPage()"
+        >
+            next →
+        </button>
+
+    </div>
+
+
+</div>
+
+
+
+<script>
+
+    /* =========================================
+       PAGE SYSTEM
+    ========================================= */
+
+    let currentPage = 1;
+
+    const totalPages = 9;
+
+
+    function showPage(number) {
+
+        if (number < 1) {
+            number = 1;
+        }
+
+        if (number > totalPages) {
+            number = totalPages;
+        }
+
+
+        document
+            .querySelectorAll(".page")
+            .forEach(page => {
+
+                page.classList.remove("active");
+
+            });
+
+
+        document
+            .getElementById("page" + number)
+            .classList.add("active");
+
+
+        currentPage = number;
+
+
+        document
+            .getElementById("pageCounter")
+            .textContent =
+            String(currentPage).padStart(2, "0")
+            + " / "
+            + String(totalPages).padStart(2, "0");
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+
+    function nextPage() {
+
+        showPage(currentPage + 1);
+
+    }
+
+
+
+    function prevPage() {
+
+        showPage(currentPage - 1);
+
+    }
+
+
+
+    /* =========================================
+       REVEAL PAGE
+    ========================================= */
+
+    const revealMessages = [
+
+        "You're someone I genuinely care about.",
+
+        "I started looking forward to talking to you.",
+
+        "I started remembering the little things.",
+
+        "And eventually...",
+
+        "I realized that I like you."
+
+    ];
+
+
+    let revealIndex = 0;
+
+
+    function revealNext() {
+
+        revealIndex++;
+
+
+        const text =
+            document.getElementById("revealText");
+
+
+        if (revealIndex < revealMessages.length) {
+
+            text.style.opacity = "0";
+
+
+            setTimeout(() => {
+
+                text.textContent =
+                    revealMessages[revealIndex];
+
+                text.style.opacity = "1";
+
+            }, 300);
+
+
+        } else {
+
+            nextPage();
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       RESPONSE
+    ========================================= */
+
+    function showResponse(type) {
+
+        const response =
+            document.getElementById("response");
+
+        const title =
+            document.getElementById("responseTitle");
+
+        const text =
+            document.getElementById("responseText");
+
+
+        response.style.display = "block";
+
+
+        if (type === "same") {
+
+            title.textContent =
+                "Wait... really? ♡";
+
+
+            text.textContent =
+                "Then maybe this is the beginning of something beautiful.";
+
+        }
+
+
+        if (type === "time") {
+
+            title.textContent =
+                "That's okay. ☁";
+
+
+            text.textContent =
+                "You don't have to answer right away. Take all the time you need.";
+
+        }
+
+
+        if (type === "no") {
+
+            title.textContent =
+                "Thank you for being honest. 🌷";
+
+
+            text.textContent =
+                "I still appreciate the memories we've made. And I'm glad you read this.";
+
+        }
+
+    }
+
+
+
+    /* =========================================
+       KEYBOARD NAVIGATION
+    ========================================= */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "ArrowRight") {
+
+                nextPage();
+
+            }
+
+
+            if (event.key === "ArrowLeft") {
+
+                prevPage();
+
+            }
+
+        }
+    );
+
+</script>
+
+
+</body>
+</html>
